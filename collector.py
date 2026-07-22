@@ -165,7 +165,7 @@ def write_latest(slug, rows, stamp):
         json.dump(obj, f, ensure_ascii=False, separators=(",", ":"))
 
 
-def update_history(slug, rows, stamp, keep_top=100, keep_snaps=400):
+def update_history(slug, rows, stamp, keep_top=100, keep_snaps=720):
     """대시보드용 시간대별 히스토리 JSON 누적 (data/history_<slug>.json)"""
     path = os.path.join(DATA_DIR, f"history_{slug}.json")
     hist = []
@@ -178,11 +178,35 @@ def update_history(slug, rows, stamp, keep_top=100, keep_snaps=400):
         {"r": r["rank"], "b": r["brand"], "n": r["name"], "w": r["wish"]}
         for r in rows[:keep_top]
     ]}
-    if hist and hist[-1].get("t") == stamp:   # 같은 시각 재실행이면 교체
+    hourkey = stamp[:13]                       # "YYYY-MM-DD HH" (시간 단위로 묶음)
+    if hist and str(hist[-1].get("t", ""))[:13] == hourkey:
+        hist[-1] = snap                        # 같은 시간대면 최신값으로 교체(그래프는 시간당 1점)
+    else:
+        hist.append(snap)
+    hist = hist[-keep_snaps:]                  # 오래된 스냅샷 정리(약 30일)
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(hist, f, ensure_ascii=False, separators=(",", ":"))
+
+
+def update_daily(slug, rows, stamp, keep_top=100, keep_days=366):
+    """대시보드 장기(최대 1년)용 — 하루 1개 요약(그날 마지막 실행값으로 갱신)"""
+    path = os.path.join(DATA_DIR, f"daily_{slug}.json")
+    day = stamp[:10]                            # YYYY-MM-DD
+    hist = []
+    if os.path.exists(path):
+        try:
+            hist = json.load(open(path, encoding="utf-8"))
+        except Exception:
+            hist = []
+    snap = {"t": day, "items": [
+        {"r": r["rank"], "b": r["brand"], "n": r["name"], "w": r["wish"]}
+        for r in rows[:keep_top]
+    ]}
+    if hist and hist[-1].get("t") == day:       # 오늘자면 최신값으로 교체
         hist[-1] = snap
     else:
         hist.append(snap)
-    hist = hist[-keep_snaps:]                  # 오래된 스냅샷 정리(약 14일)
+    hist = hist[-keep_days:]
     with open(path, "w", encoding="utf-8") as f:
         json.dump(hist, f, ensure_ascii=False, separators=(",", ":"))
 
@@ -304,6 +328,7 @@ def main():
                     save_rows(con, cat["name"], rows, stamp)
                     write_latest(cat["slug"], rows, stamp)
                     update_history(cat["slug"], rows, stamp)
+                    update_daily(cat["slug"], rows, stamp)
                     print(f"[{stamp}] {cat['name']}: {len(rows)}개 저장")
                 else:
                     print(f"[{stamp}] {cat['name']}: 상품목록 못 찾음")

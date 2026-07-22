@@ -18,25 +18,49 @@
   body{margin:0;background:var(--page);color:var(--ink);
     font-family:"Pretendard Variable",Pretendard,system-ui,-apple-system,"Malgun Gothic",sans-serif;
     -webkit-font-smoothing:antialiased;}
-  .wrap{max-width:1080px;margin:0 auto;padding:24px 20px 60px;}
+  .wrap{max-width:1080px;margin:0 auto;padding:20px 20px 60px;}
   header h1{font-size:20px;margin:0 0 4px;font-weight:700;}
   header .sub{color:var(--ink2);font-size:13px;}
   .updated{color:var(--muted);font-size:12px;margin-top:4px;}
-  .tabs{display:flex;gap:8px;margin:20px 0 4px;}
+  .tabs{display:flex;gap:8px;margin:18px 0 4px;}
   .tab{padding:9px 16px;border:1px solid var(--border);background:var(--surface-1);
     border-radius:10px;font-size:14px;font-weight:600;color:var(--ink2);cursor:pointer;}
   .tab.active{background:var(--ink);color:#fff;border-color:var(--ink);}
-  .controls{display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  .controls{display:flex;align-items:center;gap:10px 14px;flex-wrap:wrap;
     background:var(--surface-1);border:1px solid var(--border);border-radius:12px;
-    padding:14px 16px;margin:14px 0 18px;}
+    padding:12px 16px;margin:12px 0 12px;}
   .controls label{font-size:13px;color:var(--ink2);font-weight:600;}
-  .controls input[type=range]{flex:1;min-width:200px;accent-color:var(--series-1);}
+  .controls input[type=range]{flex:1;min-width:160px;accent-color:var(--series-1);}
   .controls input:disabled{opacity:.4;}
-  .timepill{font-weight:700;font-size:15px;font-variant-numeric:tabular-nums;
+  .timepill{font-weight:700;font-size:14px;font-variant-numeric:tabular-nums;
     background:var(--page);border:1px solid var(--border);border-radius:8px;padding:5px 12px;}
+  select{padding:7px 10px;border:1px solid var(--border);border-radius:8px;font-family:inherit;
+    font-size:13px;font-weight:600;color:var(--ink);background:var(--surface-1);cursor:pointer;}
+
+  /* 상단 고정 그래프 패널 */
+  .chartpanel{position:sticky;top:0;z-index:20;background:var(--surface-1);
+    border:1px solid var(--border);border-radius:12px;padding:12px 16px 6px;
+    margin-bottom:14px;box-shadow:0 6px 16px rgba(0,0,0,0.06);}
+  .chartpanel h3{margin:0;font-size:14px;font-weight:700;display:inline-block;}
+  .chartpanel .psub{color:var(--ink2);font-size:12px;margin:2px 0 8px;}
+  .selbar{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:6px;align-items:center;}
+  .chip{display:inline-flex;align-items:center;gap:6px;background:var(--page);border:1px solid var(--border);
+    border-radius:999px;padding:3px 9px;font-size:12px;font-weight:600;max-width:260px;}
+  .chip .x{cursor:pointer;color:var(--muted);font-weight:800;}
+  .chip .nm{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+  .clearbtn{font-size:12px;color:var(--series-1);cursor:pointer;font-weight:700;border:none;background:none;}
+  .hint{color:var(--muted);font-size:12px;}
+  .dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:2px;vertical-align:middle;}
+  #chart svg{display:block}
+  .collapsed #chart{display:none;}
+  .collapsed .psub{display:none;}
+
+  .search{margin:0 0 10px;}
+  .search input{width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:10px;
+    font-size:14px;font-family:inherit;}
   table{width:100%;border-collapse:collapse;background:var(--surface-1);
     border:1px solid var(--border);border-radius:12px;overflow:hidden;font-size:14px;}
-  th,td{padding:11px 12px;text-align:left;border-bottom:1px solid var(--grid);}
+  th,td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--grid);}
   th{font-size:12px;color:var(--muted);font-weight:700;background:#fbfbf9;}
   td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;}
   tr:last-child td{border-bottom:none;}
@@ -51,18 +75,11 @@
   tr.clickable{cursor:pointer;}
   tr.clickable:hover{background:#f3f6fb;}
   tr.brandrow.clickable:hover{background:#ffedd9;}
-  .panel{margin-top:22px;background:var(--surface-1);border:1px solid var(--border);
-    border-radius:12px;padding:18px 18px 10px;}
-  .panel h3{margin:0 0 2px;font-size:15px;font-weight:700;}
-  .panel .psub{color:var(--ink2);font-size:12px;margin-bottom:10px;}
-  .legend{font-size:12px;color:var(--ink2);display:flex;gap:16px;margin-bottom:4px;}
-  .legend span{display:inline-flex;align-items:center;gap:6px;}
-  .swatch{width:20px;height:3px;border-radius:2px;display:inline-block;}
+  .pickcell{width:34px;text-align:center;}
+  .pickbox{width:16px;height:16px;border:1.5px solid var(--axis);border-radius:5px;display:inline-block;vertical-align:middle;}
+  tr.picked .pickbox{display:none;}
   .empty{padding:40px;text-align:center;color:var(--muted);font-size:14px;line-height:1.7;}
-  footer{margin-top:28px;color:var(--muted);font-size:12px;line-height:1.6;}
-  .search{margin:0 0 10px;}
-  .search input{width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:10px;
-    font-size:14px;font-family:inherit;}
+  footer{margin-top:24px;color:var(--muted);font-size:12px;line-height:1.6;}
 </style>
 </head>
 <body>
@@ -79,187 +96,229 @@
   </div>
 
   <div class="controls">
-    <label>시간대</label>
+    <label>기간</label>
+    <select id="rangeSel">
+      <option value="1일">1일</option>
+      <option value="1주">1주</option>
+      <option value="1개월" selected>1개월</option>
+      <option value="3개월">3개월</option>
+      <option value="6개월">6개월</option>
+      <option value="1년">1년</option>
+    </select>
+    <label>날짜</label>
+    <select id="dateSel"></select>
+    <label>시점</label>
     <input type="range" id="hour" min="0" max="0" value="0" step="1">
     <span class="timepill" id="hourlabel">—</span>
   </div>
 
-  <div class="search"><input id="q" placeholder="상품명·브랜드 검색 (예: 타이거모닝)"></div>
-
-  <div id="tablewrap"></div>
-
-  <div class="panel">
-    <h3 id="trendTitle">상품을 클릭하면 순위 추이가 보여요</h3>
-    <div class="psub" id="trendSub">시간대별 순위 변화 (숫자가 낮을수록 상위)</div>
-    <div class="legend">
-      <span><i class="swatch" style="background:var(--series-1)"></i>순위</span>
-      <span><i class="swatch" style="background:var(--brandbd)"></i>위시 수</span>
-    </div>
+  <!-- 상단 고정 그래프 -->
+  <div class="chartpanel collapsed" id="chartpanel">
+    <h3>순위 추이 비교</h3>
+    <div class="psub" id="trendSub"></div>
+    <div class="selbar" id="selbar"></div>
     <div id="chart"></div>
   </div>
 
-  <footer id="foot">데이터 수집 주기: 매시간 · 개인 참고용</footer>
+  <div class="search"><input id="q" placeholder="상품명·브랜드 검색 (예: 타이거모닝)"></div>
+  <div id="tablewrap"></div>
+
+  <footer>데이터 수집 주기: 매시간 · 개인 참고용 · 최근 30일은 시간 단위, 그 이전은 하루 단위로 조회</footer>
 </div>
 
 <script>
 const CATS = {
-  health:      {latest:"data/latest_health.json",     hist:"data/history_health.json",     label:"건강 전체"},
-  innerbeauty: {latest:"data/latest_innerbeauty.json", hist:"data/history_innerbeauty.json", label:"이너뷰티/다이어트"},
+  health:      {latest:"data/latest_health.json",  hourly:"data/history_health.json",  daily:"data/daily_health.json",  label:"건강 전체"},
+  innerbeauty: {latest:"data/latest_innerbeauty.json", hourly:"data/history_innerbeauty.json", daily:"data/daily_innerbeauty.json", label:"이너뷰티/다이어트"},
 };
-const HILITE = "타이거모닝";  // 강조할 브랜드(부분일치)
-const store = {};   // store[cat] = {latest:{t,items}, hist:[{t,items}]}
-let curCat = "health", curIdx = 0, curTrendName = null, query = "";
-
+const HILITE = "타이거모닝";
+const PALETTE = ["#2a78d6","#eb6834","#1baf7a","#eda100","#e87ba4","#4a3aa7","#008300","#e34948"];
+const MAX_SEL = 8;
+const RANGES = {
+  "1일":   {src:"hourly", n:24},
+  "1주":   {src:"hourly", n:168},
+  "1개월": {src:"hourly", n:100000},
+  "3개월": {src:"daily",  n:93},
+  "6개월": {src:"daily",  n:186},
+  "1년":   {src:"daily",  n:366},
+};
+const store = {};
+let curCat="health", curRange="1개월", curIdx=0, query="";
+let selected=[];
+const selByCat={health:[], innerbeauty:[]};
 const fmt = n => (n==null? "–" : Number(n).toLocaleString());
+const colorOf = name => { const i=selected.indexOf(name); return i<0?"#999":PALETTE[i%PALETTE.length]; };
 
 async function fetchJson(url){
-  try{ const r = await fetch(url + "?_=" + Date.now()); if(!r.ok) throw 0; return await r.json(); }
+  try{ const r=await fetch(url+"?_="+Date.now()); if(!r.ok) throw 0; return await r.json(); }
   catch(e){ return null; }
 }
-
 async function load(cat){
-  if (store[cat]) return store[cat];
-  const latest = await fetchJson(CATS[cat].latest);
-  let hist = await fetchJson(CATS[cat].hist);
-  if(!Array.isArray(hist)) hist = [];
-  // 최신 스냅샷이 히스토리 끝과 같은 시각이면, 표에는 전체(latest)를 쓰도록 병합
-  store[cat] = {latest: latest||null, hist};
+  if(store[cat]) return store[cat];
+  const latest=await fetchJson(CATS[cat].latest);
+  let hourly=await fetchJson(CATS[cat].hourly); if(!Array.isArray(hourly)) hourly=[];
+  let daily =await fetchJson(CATS[cat].daily);  if(!Array.isArray(daily))  daily=[];
+  store[cat]={latest, hourly, daily};
   return store[cat];
 }
 
-function snapMap(items){
-  const m = new Map();
-  (items||[]).forEach(it => m.set(it.n, it));
-  return m;
+// 현재 기간에 해당하는 작업 배열
+function working(){
+  const s=store[curCat]; if(!s) return {arr:[], src:"hourly"};
+  const cfg=RANGES[curRange];
+  const base = cfg.src==="daily"? s.daily : s.hourly;
+  const arr = base.slice(-cfg.n);
+  return {arr, src:cfg.src};
 }
-
-// 특정 인덱스의 표시용 아이템 (최신이면 전체 500, 과거면 히스토리 상위)
-function itemsAt(cat, idx){
-  const s = store[cat]; if(!s) return [];
-  const isNewest = idx >= s.hist.length-1;
-  if(isNewest && s.latest && s.latest.items){
-    if(!s.hist.length || s.latest.t === s.hist[s.hist.length-1].t) return s.latest.items;
+function snapMap(items){ const m=new Map(); (items||[]).forEach(it=>m.set(it.n,it)); return m; }
+function itemsAt(idx){
+  const s=store[curCat]; const w=working(); if(!s) return [];
+  const isNewest = idx>=w.arr.length-1;
+  if(isNewest && w.src==="hourly" && s.latest && s.latest.items){
+    if(!w.arr.length || s.latest.t===w.arr[w.arr.length-1].t) return s.latest.items;
   }
-  return s.hist.length? (s.hist[idx]?.items||[]) : (s.latest?.items||[]);
+  return w.arr[idx]?.items || (isNewest && s.latest? s.latest.items : []);
 }
-function snapCount(cat){
-  const s = store[cat]; if(!s) return 0;
-  return Math.max(s.hist.length, s.latest?1:0);
-}
-function stampAt(cat, idx){
-  const s = store[cat]; if(!s) return "—";
-  if(s.hist.length) return s.hist[idx]?.t || s.latest?.t || "—";
-  return s.latest?.t || "—";
-}
+function count(){ const w=working(); const s=store[curCat]; return w.arr.length || (s&&s.latest?1:0); }
+function stampAt(idx){ const w=working(); const s=store[curCat]; return w.arr[idx]?.t || (s&&s.latest?s.latest.t:"—"); }
 
 function renderTable(){
-  const s = store[curCat];
-  const wrap = document.getElementById('tablewrap');
-  if(!s || snapCount(curCat)===0){
-    wrap.innerHTML = `<div class="empty">아직 수집된 데이터가 없어요.<br>
-      매시간 자동 수집이 돌면 여기에 순위가 채워집니다.<br>
-      (첫 수집 직후라면 몇 분 뒤 새로고침 해보세요)</div>`;
+  const wrap=document.getElementById('tablewrap');
+  if(count()===0){
+    wrap.innerHTML=`<div class="empty">아직 이 기간에 수집된 데이터가 없어요.<br>
+      매시간 자동 수집이 쌓이면 채워집니다. (첫 수집 직후면 잠시 뒤 새로고침)</div>`;
     return;
   }
-  const cur = itemsAt(curCat, curIdx);
-  const prev = curIdx>0 ? snapMap(s.hist[curIdx-1]?.items) : null;
-  let items = (cur||[]).slice().sort((a,b)=>a.r-b.r);
-  if(query){
-    const q = query.toLowerCase();
-    items = items.filter(it => (it.n||"").toLowerCase().includes(q) || (it.b||"").toLowerCase().includes(q));
-  }
-  const rows = items.map(it=>{
-    const hi = (it.b||"").includes(HILITE);
-    let rd = '<span class="delta flat">–</span>', wd = '<span class="delta flat">–</span>';
+  const w=working();
+  const cur=itemsAt(curIdx);
+  const prev = curIdx>0 ? snapMap(w.arr[curIdx-1]?.items) : null;
+  let items=(cur||[]).slice().sort((a,b)=>a.r-b.r);
+  if(query){ const q=query.toLowerCase();
+    items=items.filter(it=>(it.n||"").toLowerCase().includes(q)||(it.b||"").toLowerCase().includes(q)); }
+  const rows=items.map(it=>{
+    const hi=(it.b||"").includes(HILITE);
+    const picked=selected.includes(it.n);
+    let rd='<span class="delta flat">–</span>', wd='<span class="delta flat">–</span>';
     if(prev){
-      const p = prev.get(it.n);
-      if(!p){ rd = '<span class="delta new">NEW</span>'; }
+      const p=prev.get(it.n);
+      if(!p){ rd='<span class="delta new">NEW</span>'; }
       else{
-        const d = p.r - it.r;
-        rd = d>0? `<span class="delta up">▲${d}</span>` : d<0? `<span class="delta down">▼${-d}</span>` : '<span class="delta flat">–</span>';
-        const wdv = (it.w!=null && p.w!=null)? it.w - p.w : 0;
-        wd = wdv>0? `<span class="delta up">+${fmt(wdv)}</span>` : wdv<0? `<span class="delta down">${fmt(wdv)}</span>` : '<span class="delta flat">–</span>';
+        const d=p.r-it.r;
+        rd=d>0?`<span class="delta up">▲${d}</span>`:d<0?`<span class="delta down">▼${-d}</span>`:'<span class="delta flat">–</span>';
+        const wv=(it.w!=null&&p.w!=null)?it.w-p.w:0;
+        wd=wv>0?`<span class="delta up">+${fmt(wv)}</span>`:wv<0?`<span class="delta down">${fmt(wv)}</span>`:'<span class="delta flat">–</span>';
       }
     }
-    return `<tr class="clickable ${hi?'brandrow':''}" data-name="${encodeURIComponent(it.n)}">
+    const mark=picked?`<span class="dot" style="background:${colorOf(it.n)}"></span>`:`<span class="pickbox"></span>`;
+    return `<tr class="clickable ${hi?'brandrow':''} ${picked?'picked':''}" data-name="${encodeURIComponent(it.n)}">
+      <td class="pickcell">${mark}</td>
       <td><span class="rank">${it.r}</span></td>
       <td>${rd}</td>
       <td><div class="pname">${it.n}</div><div class="brand">${it.b||""}</div></td>
       <td class="num wish">${fmt(it.w)}</td>
       <td class="num">${wd}</td></tr>`;
   }).join("");
-  wrap.innerHTML = `<table><thead><tr>
-      <th style="width:60px">순위</th><th style="width:66px">변동</th>
-      <th>브랜드 · 상품명</th><th class="num" style="width:104px">위시 수</th>
-      <th class="num" style="width:96px">위시 변동</th></tr></thead><tbody>${rows}</tbody></table>`;
-  wrap.querySelectorAll('tr').forEach(tr=>{
-    tr.onclick=()=>{ curTrendName = decodeURIComponent(tr.dataset.name); renderChart(); };
-  });
+  wrap.innerHTML=`<table><thead><tr>
+    <th class="pickcell">비교</th><th style="width:54px">순위</th><th style="width:60px">변동</th>
+    <th>브랜드 · 상품명</th><th class="num" style="width:98px">위시 수</th>
+    <th class="num" style="width:90px">위시 변동</th></tr></thead><tbody>${rows}</tbody></table>`;
+  wrap.querySelectorAll('tr').forEach(tr=> tr.onclick=()=>toggleSelect(decodeURIComponent(tr.dataset.name)));
+}
+
+function toggleSelect(name){
+  const i=selected.indexOf(name);
+  if(i>=0) selected.splice(i,1);
+  else{ if(selected.length>=MAX_SEL){ alert(`한 번에 최대 ${MAX_SEL}개까지 비교할 수 있어요.`); return; } selected.push(name); }
+  selByCat[curCat]=selected.slice();
+  renderSelbar(); renderTable(); renderChart();
+}
+function renderSelbar(){
+  const bar=document.getElementById('selbar');
+  const panel=document.getElementById('chartpanel');
+  if(!selected.length){
+    bar.innerHTML=`<span class="hint">표에서 상품을 클릭하면 이 그래프에 색깔별로 추가돼요 (여러 개 동시 비교 · 최대 ${MAX_SEL}개).</span>`;
+    panel.classList.add('collapsed'); return;
+  }
+  panel.classList.remove('collapsed');
+  const chips=selected.map(n=>{
+    const short=n.length>24?n.slice(0,24)+"…":n;
+    return `<span class="chip"><span class="dot" style="background:${colorOf(n)}"></span>
+      <span class="nm">${short}</span><span class="x" data-x="${encodeURIComponent(n)}">×</span></span>`;
+  }).join("");
+  bar.innerHTML=chips+`<button class="clearbtn" id="clearSel">전체 지우기</button>`;
+  bar.querySelectorAll('.x').forEach(x=>x.onclick=()=>toggleSelect(decodeURIComponent(x.dataset.x)));
+  document.getElementById('clearSel').onclick=()=>{ selected=[]; selByCat[curCat]=[]; renderSelbar(); renderTable(); renderChart(); };
 }
 
 function renderChart(){
-  const s = store[curCat];
-  const hist = s ? s.hist : [];
-  const chart = document.getElementById('chart');
-  if(!curTrendName || !hist.length){ chart.innerHTML=""; return; }
-  const pts = [];
-  hist.forEach((snap,i)=>{
-    const it = (snap.items||[]).find(x=>x.n===curTrendName);
-    if(it) pts.push({i, t:snap.t, r:it.r, w:it.w, b:it.b});
-  });
-  if(!pts.length){ chart.innerHTML=""; return; }
-  document.getElementById('trendTitle').textContent = (pts[0].b? pts[0].b+" · " : "") + curTrendName;
-  if(pts.length===1){
-    document.getElementById('trendSub').textContent =
-      `현재 ${pts[0].r}위 · 위시 ${fmt(pts[0].w)} — 추이 그래프는 데이터가 2시간 이상 쌓이면 그려져요`;
+  const w=working(); const hist=w.arr;
+  const chart=document.getElementById('chart');
+  const sub=document.getElementById('trendSub');
+  if(!selected.length){ chart.innerHTML=""; return; }
+  const series=selected.map(name=>{
+    const pts=[];
+    hist.forEach((snap,i)=>{ const it=(snap.items||[]).find(x=>x.n===name); if(it) pts.push({i,r:it.r,w:it.w}); });
+    return {name, color:colorOf(name), pts};
+  }).filter(s=>s.pts.length);
+  const maxLen=Math.max(0,...series.map(s=>s.pts.length));
+  if(maxLen<=1){
+    sub.textContent="선택 상품의 현재 순위는 아래 표에 있어요. 추이 선은 이 기간에 2개 이상 시점이 쌓이면 그려집니다.";
     chart.innerHTML=""; return;
   }
-  document.getElementById('trendSub').textContent = "시간대별 순위 변화 (숫자가 낮을수록 상위)";
-  const W=1000,H=240,padL=44,padR=20,padT=16,padB=30;
-  const ranks=pts.map(p=>p.r), lo=Math.max(1,Math.min(...ranks)-1), hi=Math.max(...ranks)+1;
-  const n=pts.length;
-  const x=i=> padL + (W-padL-padR)*(n===1?0.5:i/(n-1));
-  const y=r=> padT + (H-padT-padB)*((r-lo)/(hi-lo||1));
+  sub.textContent=`시간 흐름별 순위 (위로 갈수록 상위) · 기간: ${curRange}`;
+  const W=1000,H=210,padL=44,padR=14,padT=12,padB=28;
+  const allR=series.flatMap(s=>s.pts.map(p=>p.r));
+  const lo=Math.max(1,Math.min(...allR)-1), hi=Math.max(...allR)+1;
+  const n=hist.length;
+  const X=i=> padL+(W-padL-padR)*(n<=1?0.5:i/(n-1));
+  const Y=r=> padT+(H-padT-padB)*((r-lo)/(hi-lo||1));
   let grid="";
-  for(let g=0;g<=4;g++){ const rr=Math.round(lo+(hi-lo)*g/4), yy=y(rr);
+  for(let g=0;g<=4;g++){ const rr=Math.round(lo+(hi-lo)*g/4), yy=Y(rr);
     grid+=`<line x1="${padL}" y1="${yy}" x2="${W-padR}" y2="${yy}" stroke="var(--grid)"/>
       <text x="${padL-8}" y="${yy+4}" text-anchor="end" font-size="11" fill="var(--muted)">${rr}위</text>`; }
-  let xl="";
-  const step=Math.max(1,Math.floor(n/6));
-  pts.forEach((p,i)=>{ if(i%step===0||i===n-1){ const lab=(p.t||"").slice(5,16);
-    xl+=`<text x="${x(i)}" y="${H-8}" text-anchor="middle" font-size="10" fill="var(--muted)">${lab}</text>`; }});
-  const line=pts.map((p,i)=>`${x(i)},${y(p.r)}`).join(" ");
-  const dots=pts.map((p,i)=>`<circle cx="${x(i)}" cy="${y(p.r)}" r="${i===curIdx?5:3}"
-     fill="${i===curIdx?'var(--series-1)':'#fff'}" stroke="var(--series-1)" stroke-width="2"/>`).join("");
-  chart.innerHTML=`<svg viewBox="0 0 ${W} ${H}" width="100%" preserveAspectRatio="xMidYMid meet">
-    ${grid}${xl}<polyline points="${line}" fill="none" stroke="var(--series-1)"
-    stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>${dots}</svg>`;
+  let xl=""; const step=Math.max(1,Math.floor(n/6));
+  hist.forEach((snap,i)=>{ if(i%step===0||i===n-1){ const t=snap.t||"";
+    const lab = w.src==="daily"? t.slice(5,10) : t.slice(5,16);
+    xl+=`<text x="${X(i)}" y="${H-7}" text-anchor="middle" font-size="10" fill="var(--muted)">${lab}</text>`; }});
+  const vline=`<line x1="${X(curIdx)}" y1="${padT}" x2="${X(curIdx)}" y2="${H-padB}" stroke="var(--axis)" stroke-dasharray="3 3"/>`;
+  const paths=series.map(s=>{
+    const line=s.pts.map(p=>`${X(p.i)},${Y(p.r)}`).join(" ");
+    const dots=s.pts.map(p=>`<circle cx="${X(p.i)}" cy="${Y(p.r)}" r="2.6" fill="#fff" stroke="${s.color}" stroke-width="2"/>`).join("");
+    return `<polyline points="${line}" fill="none" stroke="${s.color}" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>${dots}`;
+  }).join("");
+  chart.innerHTML=`<svg viewBox="0 0 ${W} ${H}" width="100%" preserveAspectRatio="xMidYMid meet">${grid}${xl}${vline}${paths}</svg>`;
 }
 
 function setupSlider(){
-  const n = snapCount(curCat);
-  const el = document.getElementById('hour');
-  el.max = Math.max(0, n-1);
-  el.value = n? n-1 : 0;
-  el.disabled = n<=1;
-  curIdx = n? n-1 : 0;
-  updateHourLabel();
+  const n=count();
+  const el=document.getElementById('hour');
+  el.max=Math.max(0,n-1); el.value=n?n-1:0; el.disabled=n<=1;
+  curIdx=n?n-1:0;
+  updateLabels();
 }
-function updateHourLabel(){
-  const n = snapCount(curCat);
-  const lab = document.getElementById('hourlabel');
-  lab.textContent = n? stampAt(curCat, curIdx) : "—";
-  const up = document.getElementById('updated');
-  up.textContent = n? `최종 업데이트: ${stampAt(curCat, n-1)}   ·   수집 시점 ${n}개` : "";
+function updateLabels(){
+  const n=count();
+  document.getElementById('hourlabel').textContent = n? stampAt(curIdx):"—";
+  const s=store[curCat];
+  document.getElementById('updated').textContent =
+    (s&&s.latest)? `최종 업데이트: ${s.latest.t}` : "";
+}
+function populateDates(){
+  const sel=document.getElementById('dateSel'); const n=count();
+  if(!n){ sel.innerHTML=""; return; }
+  const dates=[];
+  for(let i=0;i<n;i++){ const d=(stampAt(i)||"").slice(0,10); if(d&&!dates.includes(d)) dates.push(d); }
+  sel.innerHTML=dates.map(d=>`<option value="${d}">${d}</option>`).join("");
+  sel.value=(stampAt(curIdx)||"").slice(0,10);
 }
 
+function refresh(){ setupSlider(); populateDates(); renderSelbar(); renderTable(); renderChart(); }
+
 async function switchCat(cat){
-  curCat = cat; query=""; document.getElementById('q').value="";
+  curCat=cat; query=""; document.getElementById('q').value="";
   await load(cat);
-  curTrendName=null;
-  document.getElementById('chart').innerHTML="";
-  document.getElementById('trendTitle').textContent="상품을 클릭하면 순위 추이가 보여요";
-  setupSlider(); renderTable();
+  selected=(selByCat[cat]||[]).slice();
+  refresh();
 }
 
 document.getElementById('tabs').onclick=e=>{
@@ -268,8 +327,15 @@ document.getElementById('tabs').onclick=e=>{
   e.target.classList.add('active');
   switchCat(e.target.dataset.cat);
 };
+document.getElementById('rangeSel').onchange=function(){ curRange=this.value; refresh(); };
+document.getElementById('dateSel').onchange=function(){
+  const d=this.value; let target=curIdx;
+  for(let i=0;i<count();i++){ if((stampAt(i)||"").slice(0,10)===d) target=i; }
+  curIdx=target; document.getElementById('hour').value=curIdx; updateLabels(); renderTable(); renderChart();
+};
 document.getElementById('hour').oninput=function(){
-  curIdx=+this.value; updateHourLabel(); renderTable(); renderChart();
+  curIdx=+this.value; document.getElementById('dateSel').value=(stampAt(curIdx)||"").slice(0,10);
+  updateLabels(); renderTable(); renderChart();
 };
 document.getElementById('q').oninput=function(){ query=this.value.trim(); renderTable(); };
 
