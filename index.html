@@ -103,44 +103,67 @@
 
 <script>
 const CATS = {
-  health:      {file:"data/history_health.json",     label:"건강 전체"},
-  innerbeauty: {file:"data/history_innerbeauty.json", label:"이너뷰티/다이어트"},
+  health:      {latest:"data/latest_health.json",     hist:"data/history_health.json",     label:"건강 전체"},
+  innerbeauty: {latest:"data/latest_innerbeauty.json", hist:"data/history_innerbeauty.json", label:"이너뷰티/다이어트"},
 };
 const HILITE = "타이거모닝";  // 강조할 브랜드(부분일치)
-const store = {};
+const store = {};   // store[cat] = {latest:{t,items}, hist:[{t,items}]}
 let curCat = "health", curIdx = 0, curTrendName = null, query = "";
 
 const fmt = n => (n==null? "–" : Number(n).toLocaleString());
 
+async function fetchJson(url){
+  try{ const r = await fetch(url + "?_=" + Date.now()); if(!r.ok) throw 0; return await r.json(); }
+  catch(e){ return null; }
+}
+
 async function load(cat){
   if (store[cat]) return store[cat];
-  try{
-    const res = await fetch(CATS[cat].file + "?_=" + Date.now());
-    if(!res.ok) throw 0;
-    const data = await res.json();
-    store[cat] = Array.isArray(data)? data : [];
-  }catch(e){ store[cat] = []; }
+  const latest = await fetchJson(CATS[cat].latest);
+  let hist = await fetchJson(CATS[cat].hist);
+  if(!Array.isArray(hist)) hist = [];
+  // 최신 스냅샷이 히스토리 끝과 같은 시각이면, 표에는 전체(latest)를 쓰도록 병합
+  store[cat] = {latest: latest||null, hist};
   return store[cat];
 }
 
-function snapMap(snap){
+function snapMap(items){
   const m = new Map();
-  (snap.items||[]).forEach(it => m.set(it.n, it));
+  (items||[]).forEach(it => m.set(it.n, it));
   return m;
 }
 
+// 특정 인덱스의 표시용 아이템 (최신이면 전체 500, 과거면 히스토리 상위)
+function itemsAt(cat, idx){
+  const s = store[cat]; if(!s) return [];
+  const isNewest = idx >= s.hist.length-1;
+  if(isNewest && s.latest && s.latest.items){
+    if(!s.hist.length || s.latest.t === s.hist[s.hist.length-1].t) return s.latest.items;
+  }
+  return s.hist.length? (s.hist[idx]?.items||[]) : (s.latest?.items||[]);
+}
+function snapCount(cat){
+  const s = store[cat]; if(!s) return 0;
+  return Math.max(s.hist.length, s.latest?1:0);
+}
+function stampAt(cat, idx){
+  const s = store[cat]; if(!s) return "—";
+  if(s.hist.length) return s.hist[idx]?.t || s.latest?.t || "—";
+  return s.latest?.t || "—";
+}
+
 function renderTable(){
-  const hist = store[curCat] || [];
+  const s = store[curCat];
   const wrap = document.getElementById('tablewrap');
-  if(!hist.length){
+  if(!s || snapCount(curCat)===0){
     wrap.innerHTML = `<div class="empty">아직 수집된 데이터가 없어요.<br>
       매시간 자동 수집이 돌면 여기에 순위가 채워집니다.<br>
       (첫 수집 직후라면 몇 분 뒤 새로고침 해보세요)</div>`;
     return;
   }
-  const snap = hist[curIdx];
-  const prev = curIdx>0 ? snapMap(hist[curIdx-1]) : null;
-  let items = (snap.items||[]).slice().sort((a,b)=>a.r-b.r);
+  const cur = itemsAt(curCat, curIdx);
+  const prev = curIdx>0 ? snapMap(s.hist[curIdx-1]?.items) : null;
+  let items = (cur||[]).slice().sort((a,b)=>a.r-b.r);
   if(query){
     const q = query.toLowerCase();
     items = items.filter(it => (it.n||"").toLowerCase().includes(q) || (it.b||"").toLowerCase().includes(q));
@@ -175,9 +198,10 @@ function renderTable(){
 }
 
 function renderChart(){
-  const hist = store[curCat] || [];
+  const s = store[curCat];
+  const hist = s ? s.hist : [];
   const chart = document.getElementById('chart');
-  if(!curTrendName || hist.length===0){ chart.innerHTML=""; return; }
+  if(!curTrendName || !hist.length){ chart.innerHTML=""; return; }
   const pts = [];
   hist.forEach((snap,i)=>{
     const it = (snap.items||[]).find(x=>x.n===curTrendName);
@@ -213,20 +237,20 @@ function renderChart(){
 }
 
 function setupSlider(){
-  const hist = store[curCat] || [];
+  const n = snapCount(curCat);
   const el = document.getElementById('hour');
-  el.max = Math.max(0, hist.length-1);
-  el.value = hist.length? hist.length-1 : 0;
-  el.disabled = hist.length<=1;
-  curIdx = hist.length? hist.length-1 : 0;
+  el.max = Math.max(0, n-1);
+  el.value = n? n-1 : 0;
+  el.disabled = n<=1;
+  curIdx = n? n-1 : 0;
   updateHourLabel();
 }
 function updateHourLabel(){
-  const hist = store[curCat] || [];
+  const n = snapCount(curCat);
   const lab = document.getElementById('hourlabel');
-  lab.textContent = hist.length? (hist[curIdx].t||"—") : "—";
+  lab.textContent = n? stampAt(curCat, curIdx) : "—";
   const up = document.getElementById('updated');
-  up.textContent = hist.length? `최종 업데이트: ${hist[hist.length-1].t}   ·   수집 시점 ${hist.length}개` : "";
+  up.textContent = n? `최종 업데이트: ${stampAt(curCat, n-1)}   ·   수집 시점 ${n}개` : "";
 }
 
 async function switchCat(cat){

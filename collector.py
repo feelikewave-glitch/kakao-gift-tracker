@@ -154,7 +154,18 @@ def save_rows(con, category, rows, stamp):
             w.writerow([stamp, r["rank"], r["brand"], r["name"], r["wish"], r["price"]])
 
 
-def update_history(slug, rows, stamp, keep_top=120, keep_snaps=400):
+def write_latest(slug, rows, stamp):
+    """대시보드 현재 순위표용 — 전체 순위(최대 500)를 최신 스냅샷으로 저장"""
+    path = os.path.join(DATA_DIR, f"latest_{slug}.json")
+    obj = {"t": stamp, "items": [
+        {"r": r["rank"], "b": r["brand"], "n": r["name"], "w": r["wish"]}
+        for r in rows[:TOP_N]
+    ]}
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(obj, f, ensure_ascii=False, separators=(",", ":"))
+
+
+def update_history(slug, rows, stamp, keep_top=100, keep_snaps=400):
     """대시보드용 시간대별 히스토리 JSON 누적 (data/history_<slug>.json)"""
     path = os.path.join(DATA_DIR, f"history_{slug}.json")
     hist = []
@@ -291,6 +302,7 @@ def main():
                 rows = collect_category(page, cat, debug=debug)
                 if rows:
                     save_rows(con, cat["name"], rows, stamp)
+                    write_latest(cat["slug"], rows, stamp)
                     update_history(cat["slug"], rows, stamp)
                     print(f"[{stamp}] {cat['name']}: {len(rows)}개 저장")
                 else:
