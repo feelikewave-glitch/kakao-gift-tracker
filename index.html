@@ -52,7 +52,17 @@
   .hint{color:var(--muted);font-size:12px;}
   .dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:2px;vertical-align:middle;}
   #chart svg{display:block}
+  .chartwrap{position:relative;}
+  .cross{stroke:var(--axis);stroke-dasharray:3 3;}
+  .tip{position:fixed;pointer-events:none;z-index:50;background:var(--surface-1);
+    border:1px solid var(--border);border-radius:8px;box-shadow:0 4px 14px rgba(0,0,0,.14);
+    padding:8px 10px;font-size:12px;line-height:1.55;display:none;max-width:300px;}
+  .tip .th{font-weight:700;margin-bottom:4px;font-variant-numeric:tabular-nums;color:var(--ink2);}
+  .tip .row{display:flex;align-items:center;gap:6px;white-space:nowrap;}
+  .tip .nm{overflow:hidden;text-overflow:ellipsis;max-width:150px;}
+  .tip b{font-variant-numeric:tabular-nums;}
   .collapsed #chart{display:none;}
+  .collapsed .chartwrap{display:none;}
   .collapsed .psub{display:none;}
 
   .search{margin:0 0 10px;}
@@ -117,7 +127,7 @@
     <h3>순위 추이 비교</h3>
     <div class="psub" id="trendSub"></div>
     <div class="selbar" id="selbar"></div>
-    <div id="chart"></div>
+    <div class="chartwrap"><div id="chart"></div><div class="tip" id="tip"></div></div>
   </div>
 
   <div class="search"><input id="q" placeholder="상품명·브랜드 검색 (예: 타이거모닝)"></div>
@@ -250,22 +260,25 @@ function renderSelbar(){
   document.getElementById('clearSel').onclick=()=>{ selected=[]; selByCat[curCat]=[]; renderSelbar(); renderTable(); renderChart(); };
 }
 
+let chartState=null;
+
 function renderChart(){
   const w=working(); const hist=w.arr;
   const chart=document.getElementById('chart');
   const sub=document.getElementById('trendSub');
-  if(!selected.length){ chart.innerHTML=""; return; }
+  document.getElementById('tip').style.display="none";
+  if(!selected.length){ chart.innerHTML=""; chartState=null; return; }
   const series=selected.map(name=>{
-    const pts=[];
-    hist.forEach((snap,i)=>{ const it=(snap.items||[]).find(x=>x.n===name); if(it) pts.push({i,r:it.r,w:it.w}); });
-    return {name, color:colorOf(name), pts};
+    const map={};
+    hist.forEach((snap,i)=>{ const it=(snap.items||[]).find(x=>x.n===name); if(it) map[i]={r:it.r,w:it.w}; });
+    return {name, color:colorOf(name), map, pts:Object.keys(map).map(k=>({i:+k,...map[k]}))};
   }).filter(s=>s.pts.length);
   const maxLen=Math.max(0,...series.map(s=>s.pts.length));
   if(maxLen<=1){
     sub.textContent="선택 상품의 현재 순위는 아래 표에 있어요. 추이 선은 이 기간에 2개 이상 시점이 쌓이면 그려집니다.";
-    chart.innerHTML=""; return;
+    chart.innerHTML=""; chartState=null; return;
   }
-  sub.textContent=`시간 흐름별 순위 (위로 갈수록 상위) · 기간: ${curRange}`;
+  sub.textContent=`그래프에 마우스를 올리면 그 시점의 순위·위시가 보여요 · 기간: ${curRange}`;
   const W=1000,H=210,padL=44,padR=14,padT=12,padB=28;
   const allR=series.flatMap(s=>s.pts.map(p=>p.r));
   const lo=Math.max(1,Math.min(...allR)-1), hi=Math.max(...allR)+1;
@@ -280,13 +293,73 @@ function renderChart(){
   hist.forEach((snap,i)=>{ if(i%step===0||i===n-1){ const t=snap.t||"";
     const lab = w.src==="daily"? t.slice(5,10) : t.slice(5,16);
     xl+=`<text x="${X(i)}" y="${H-7}" text-anchor="middle" font-size="10" fill="var(--muted)">${lab}</text>`; }});
-  const vline=`<line x1="${X(curIdx)}" y1="${padT}" x2="${X(curIdx)}" y2="${H-padB}" stroke="var(--axis)" stroke-dasharray="3 3"/>`;
   const paths=series.map(s=>{
     const line=s.pts.map(p=>`${X(p.i)},${Y(p.r)}`).join(" ");
     const dots=s.pts.map(p=>`<circle cx="${X(p.i)}" cy="${Y(p.r)}" r="2.6" fill="#fff" stroke="${s.color}" stroke-width="2"/>`).join("");
     return `<polyline points="${line}" fill="none" stroke="${s.color}" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>${dots}`;
   }).join("");
-  chart.innerHTML=`<svg viewBox="0 0 ${W} ${H}" width="100%" preserveAspectRatio="xMidYMid meet">${grid}${xl}${vline}${paths}</svg>`;
+  chart.innerHTML=`<svg id="csvg" viewBox="0 0 ${W} ${H}" width="100%" preserveAspectRatio="xMidYMid meet">
+    ${grid}${xl}
+    <line id="crossline" class="cross" x1="0" y1="${padT}" x2="0" y2="${H-padB}" style="display:none"/>
+    <g id="crossdots"></g>
+    ${paths}
+    <rect x="${padL}" y="${padT}" width="${W-padL-padR}" height="${H-padT-padB}" fill="transparent"/>
+  </svg>`;
+  chartState={W,H,padL,padR,padT,padB,n,lo,hi,series,stamps:hist.map(s=>s.t),src:w.src,Xfn:X,Yfn:Y};
+  attachHover();
+}
+
+function attachHover(){
+  const svg=document.getElementById('csvg'); if(!svg||!chartState) return;
+  const tip=document.getElementById('tip');
+  const {W,padL,padR,n,Xfn,Yfn,series,stamps}=chartState;
+  function idxFromEvent(e){
+    const rect=svg.getBoundingClientRect();
+    const cx=(e.touches? e.touches[0].clientX : e.clientX);
+    const fx=(cx-rect.left)/rect.width;               // 0..1
+    const vbx=fx*W;
+    let i=Math.round((vbx-padL)/((W-padL-padR)/(n-1||1)));
+    return Math.max(0, Math.min(n-1, i));
+  }
+  function show(e){
+    const i=idxFromEvent(e);
+    const cl=document.getElementById('crossline');
+    const cd=document.getElementById('crossdots');
+    const xpix=Xfn(i);
+    cl.setAttribute('x1',xpix); cl.setAttribute('x2',xpix); cl.style.display="";
+    // 각 시리즈의 해당 지점 강조점 + 툴팁 내용
+    let dots="", rows="";
+    series.forEach(s=>{
+      const cur=s.map[i]; if(!cur) return;
+      dots+=`<circle cx="${xpix}" cy="${Yfn(cur.r)}" r="4.5" fill="${s.color}" stroke="#fff" stroke-width="1.5"/>`;
+      // 위시 변동: 이전 지점 대비
+      let dw="";
+      for(let j=i-1;j>=0;j--){ if(s.map[j]){ const d=cur.w-s.map[j].w;
+        dw = d>0?` <span style="color:var(--up)">+${fmt(d)}</span>`:d<0?` <span style="color:var(--down)">${fmt(d)}</span>`:""; break; } }
+      const short=s.name.length>22?s.name.slice(0,22)+"…":s.name;
+      rows+=`<div class="row"><span class="dot" style="background:${s.color}"></span>
+        <span class="nm">${short}</span><b>${cur.r}위</b> · 위시 <b>${fmt(cur.w)}</b>${dw}</div>`;
+    });
+    cd.innerHTML=dots;
+    if(!rows){ tip.style.display="none"; return; }
+    tip.innerHTML=`<div class="th">${stamps[i]||""}</div>${rows}`;
+    tip.style.display="block";
+    const cx=(e.touches? e.touches[0].clientX : e.clientX);
+    const cy=(e.touches? e.touches[0].clientY : e.clientY);
+    const tw=tip.offsetWidth, th=tip.offsetHeight;
+    let left=cx+14, top=cy+14;
+    if(left+tw>window.innerWidth-8) left=cx-tw-14;
+    if(top+th>window.innerHeight-8) top=cy-th-14;
+    tip.style.left=Math.max(8,left)+"px"; tip.style.top=Math.max(8,top)+"px";
+  }
+  function hide(){ tip.style.display="none";
+    const cl=document.getElementById('crossline'); if(cl) cl.style.display="none";
+    const cd=document.getElementById('crossdots'); if(cd) cd.innerHTML=""; }
+  svg.addEventListener('mousemove',show);
+  svg.addEventListener('mouseleave',hide);
+  svg.addEventListener('touchstart',show,{passive:true});
+  svg.addEventListener('touchmove',show,{passive:true});
+  svg.addEventListener('touchend',hide);
 }
 
 function setupSlider(){
