@@ -1,0 +1,1357 @@
+{
+  "updatedAt": "07.22 09:00",
+  "last": true,
+  "feedbackData": {
+    "9703988": {
+      "impression_id": "air_gift_ranking_category_tab",
+      "caller_id": "ranking_tab"
+    },
+    "7591649": {
+      "impression_id": "air_gift_ranking_category_tab",
+      "caller_id": "ranking_tab"
+    },
+    "3805834": {
+      "impression_id": "air_gift_ranking_category_tab",
+      "caller_id": "ranking_tab"
+    },
+    "12588197": {
+      "impression_id": "air_gift_ranking_category_tab",
+      "caller_id": "ranking_tab"
+    },
+    "13648700": {
+      "impression_id": "air_gift_ranking_category_tab",
+      "caller_id": "ranking_tab"
+    },
+    "11801920": {
+      "impression_id": "air_gift_ranking_category_tab",
+      "caller_id": "ranking_tab"
+    },
+    "4478284": {
+      "impression_id": "air_gift_ranking_category_tab",
+      "caller_id": "ranking_tab"
+    },
+    "2089506": {
+      "impression_id": "air_gift_ranking_category_tab",
+      "caller_id": "ranking_tab"
+    },
+    "11896032": {
+      "impression_id": "air_gift_ranking_category_tab",
+      "caller_id": "ranking_tab"
+    },
+    "10816177": {
+      "impression_id": "air_gift_ranking_category_tab",
+      "caller_id": "ranking_tab"
+    },
+    "2295596": {
+      "impression_id": "air_gift_ranking_category_tab",
+      "caller_id": "ranking_tab"
+    },
+    "11970230": {
+      "impression_id": "air_gift_ranking_category_tab",
+      "caller_id": "ranking_tab"
+    },
+    "11601248": {
+      "impression_id": "air_gift_ranking_category_tab",
+      "caller_id": "ranking_tab"
+    },
+    "12821204": {
+      "impression_id": "air_gift_ranking_category_tab",
+      "caller_id": "ranking_tab"
+    },
+    "12724545": {
+      "impression_id": "air_gift_ranking_category_tab",
+      "caller_id": "ranking_tab"
+    },
+    "1388728": {
+      "impression_id": "air_gift_ranking_category_tab",
+      "caller_id": "ranking_tab"
+    },
+    "2400840": {
+      "impression_id": "air_gift_ranking_category_tab",
+      "caller_id": "ranking_tab"
+    },
+    "10576607": {
+      "impression_id": "air_gift_ranking_category_tab",
+      "caller_id": "ranking_tab"
+    },
+    "4990745": {
+      "impression_id": "air_gift_ranking_category_tab",
+      "caller_id": "ranking_tab"
+    },
+    "9636373": {
+      "impression_id": "air_gift_ranking_category_tab",
+      "caller_id": "ranking_tab"
+    }
+  },
+  "products": [
+    {
+      "id": 11601248,
+      "productId": 11601248,
+      "name": "성수동 품절대란 [받고싶은 선물 1위/13가지 향] 헤트라스 망고씨드버터 퍼퓸 핸드크림 50ml 1개입",
+      "productType": "Shipping",
+      "price": {
+        "basicPrice": 9800,
+        "sellingPrice": 9800,
+        "discountRate": 0
+      },
+      "brand": {
+        "id": 18500,
+        "name": "헤트라스(뷰티)"
+      },
+      "review": {
+        "positiveReviewRate": 0,
+        "reviewCount": 0
+      },
+      "wish": {
+        "wishCount": 23426,
+        "isWished": false
+      },
+      "image": {
+        "imageUrl": "https://st.kakaocdn.net/product/gift/product/20260223101711_bbc278bfc7f24b26a5739477242f500c.jpg",
+        "imageBlindType": "NONE"
+      },
+      "displayName": {
+        "EVENT_SUG_NAME_MODEL": "성수동 품절대란 [받고싶은 선물 1위/13가지 향] 헤트라스 망고씨드버터 퍼퓸 핸드크림 50ml 1개입"
+      },
+      "ticket": false,
+      "tierTag": {
+        "tierTags": [
+          {
+            "tier": "1",
+            "tags": []
+          },
+          {
+            "tier": "2",
+            "tags": []
+          }
+        ]
+      },
+      "tags": [],
+      "stamp": "ON_SALE",
+      "valex": false,
+      "fomoBadge": {},
+      "displayDeliveryFee": {
+        "type": "FREE",
+        "free": true
+      },
+      "displayCategoryViews": [
+        {
+          "displaySpace": "BASIC",
+          "ldisplayCategoryId": 95,
+          "mdisplayCategoryId": 178,
+          "representative": true
+        }
+      ]
+    },
+    {
+      "id": 4990745,
+      "productId": 4990745,
+      "name": "새롭게 리뉴얼~! [워커힐호텔] 삼계탕 900g x 2팩",
+      "productType": "Shipping",
+      "price": {
+        "basicPrice": 35000,
+        "sellingPrice": 30000,
+        "discountRate": 14
+      },
+      "brand": {
+        "id": 13802,
+        "name": "워커힐호텔(배송)"
+      },
+      "review": {
+        "positiveReviewRate": 0,
+        "reviewCount": 0
+      },
+      "wish": {
+        "wishCount": 685,
+        "isWished": false
+      },
+      "image": {
+        "imageUrl": "https://st.kakaocdn.net/product/gift/product/20250924151534_2e131d5134ef4e459967bcabb1be9d0c.jpg",
+        "imageBlindType": "NONE"
+      },
+      "displayName": {
+        "EVENT_SUG_NAME_MODEL": "새롭게 리뉴얼~! [워커힐호텔] 삼계탕 900g x 2팩"
+      },
+      "ticket": false,
+      "tierTag": {
+        "tierTags": [
+          {
+            "tier": "1",
+            "tags": []
+          },
+          {
+            "tier": "2",
+            "tags": []
+          }
+        ]
+      },
+      "tags": [],
+      "stamp": "ON_SALE",
+      "valex": false,
+      "fomoBadge": {},
+      "displayDeliveryFee": {
+        "type": "FREE",
+        "free": true
+      },
+      "displayCategoryViews": [
+        {
+          "displaySpace": "BASIC",
+          "ldisplayCategoryId": 93,
+          "mdisplayCategoryId": 102,
+          "representative": true
+        }
+      ]
+    },
+    {
+      "id": 3805834,
+      "productId": 3805834,
+      "name": "[선물포장&펌프증정/6종 택1] 바이레도 바디워시 225ml",
+      "productType": "Shipping",
+      "price": {
+        "basicPrice": 78000,
+        "sellingPrice": 78000,
+        "discountRate": 0
+      },
+      "brand": {
+        "id": 10438,
+        "name": "바이레도"
+      },
+      "review": {
+        "positiveReviewRate": 0,
+        "reviewCount": 0
+      },
+      "wish": {
+        "wishCount": 17537,
+        "isWished": false
+      },
+      "image": {
+        "imageUrl": "https://st.kakaocdn.net/product/gift/product/20260708114001_788fe5861fe54f2c892fb70c795824b0.jpg",
+        "imageBlindType": "NONE"
+      },
+      "displayName": {
+        "EVENT_SUG_NAME_MODEL": "[선물포장&펌프증정/6종 택1] 바이레도 바디워시 225ml"
+      },
+      "ticket": false,
+      "tierTag": {
+        "tierTags": [
+          {
+            "tier": "1",
+            "tags": []
+          },
+          {
+            "tier": "2",
+            "tags": [
+              "PACKAGE_GIFT"
+            ]
+          }
+        ]
+      },
+      "tags": [
+        "PACKAGE"
+      ],
+      "stamp": "ON_SALE",
+      "valex": false,
+      "fomoBadge": {},
+      "displayDeliveryFee": {
+        "type": "FREE",
+        "free": true
+      },
+      "displayCategoryViews": [
+        {
+          "displaySpace": "BASIC",
+          "ldisplayCategoryId": 95,
+          "mdisplayCategoryId": 178,
+          "representative": true
+        },
+        {
+          "displaySpace": "LUX",
+          "ldisplayCategoryId": 244,
+          "mdisplayCategoryId": 371,
+          "representative": false
+        }
+      ]
+    },
+    {
+      "id": 13648700,
+      "productId": 13648700,
+      "name": "\"토마토 춘식이 텀블러\" 춘도락 스텐텀블러_춘식이",
+      "productType": "Shipping",
+      "price": {
+        "basicPrice": 27000,
+        "sellingPrice": 27000,
+        "discountRate": 0
+      },
+      "brand": {
+        "id": 2054,
+        "name": "프렌즈리빙"
+      },
+      "review": {
+        "positiveReviewRate": 0,
+        "reviewCount": 0
+      },
+      "wish": {
+        "wishCount": 3640,
+        "isWished": false
+      },
+      "image": {
+        "imageUrl": "https://st.kakaocdn.net/product/gift/product/20260601161734_d7b38df4a9b74edbae6eb33cddfe9c72.jpg",
+        "imageBlindType": "NONE"
+      },
+      "displayName": {
+        "EVENT_SUG_NAME_MODEL": "\"토마토 춘식이 텀블러\" 춘도락 스텐텀블러_춘식이"
+      },
+      "ticket": false,
+      "tierTag": {
+        "tierTags": [
+          {
+            "tier": "1",
+            "tags": []
+          },
+          {
+            "tier": "2",
+            "tags": []
+          }
+        ]
+      },
+      "tags": [],
+      "stamp": "ON_SALE",
+      "valex": false,
+      "fomoBadge": {},
+      "displayDeliveryFee": {
+        "type": "FREE",
+        "free": true
+      },
+      "displayCategoryViews": [
+        {
+          "displaySpace": "BASIC",
+          "ldisplayCategoryId": 94,
+          "mdisplayCategoryId": 110,
+          "representative": true
+        }
+      ]
+    },
+    {
+      "id": 1388728,
+      "productId": 1388728,
+      "name": "[단독 리미티드] 바디스크럽 & 샤워오일(바디워시) 기프트 세트",
+      "productType": "Shipping",
+      "price": {
+        "basicPrice": 36000,
+        "sellingPrice": 36000,
+        "discountRate": 0
+      },
+      "brand": {
+        "id": 10510,
+        "name": "사봉"
+      },
+      "review": {
+        "positiveReviewRate": 0,
+        "reviewCount": 0
+      },
+      "wish": {
+        "wishCount": 14603,
+        "isWished": false
+      },
+      "image": {
+        "imageUrl": "https://st.kakaocdn.net/product/gift/product/20260709151041_cb309d6c41164f4da9b2ecd95e0fe3d8.jpg",
+        "imageBlindType": "NONE"
+      },
+      "displayName": {
+        "EVENT_SUG_NAME_MODEL": "[단독 리미티드] 바디스크럽 & 샤워오일(바디워시) 기프트 세트"
+      },
+      "ticket": false,
+      "tierTag": {
+        "tierTags": [
+          {
+            "tier": "1",
+            "tags": []
+          },
+          {
+            "tier": "2",
+            "tags": []
+          }
+        ]
+      },
+      "labels": [
+        {
+          "type": "EXCLUSIVE",
+          "name": "단독"
+        }
+      ],
+      "tags": [],
+      "stamp": "ON_SALE",
+      "valex": false,
+      "fomoBadge": {},
+      "displayDeliveryFee": {
+        "type": "FREE",
+        "free": true
+      },
+      "displayCategoryViews": [
+        {
+          "displaySpace": "BASIC",
+          "ldisplayCategoryId": 95,
+          "mdisplayCategoryId": 178,
+          "representative": true
+        }
+      ]
+    },
+    {
+      "id": 2400840,
+      "productId": 2400840,
+      "name": "러쉬 베스트 기프트 [선물포장] 슬리피 기프트 (바디워시 & 바디로션 세트)",
+      "productType": "Shipping",
+      "price": {
+        "basicPrice": 38000,
+        "sellingPrice": 38000,
+        "discountRate": 0
+      },
+      "brand": {
+        "id": 893,
+        "name": "러쉬"
+      },
+      "review": {
+        "positiveReviewRate": 0,
+        "reviewCount": 0
+      },
+      "wish": {
+        "wishCount": 70191,
+        "isWished": false
+      },
+      "image": {
+        "imageUrl": "https://st.kakaocdn.net/product/gift/product/20260612145216_70e31a697aea4c28a088ba3d72c69da2.jpg",
+        "imageBlindType": "NONE"
+      },
+      "displayName": {
+        "EVENT_SUG_NAME_MODEL": "러쉬 베스트 기프트 [선물포장] 슬리피 기프트 (바디워시 & 바디로션 세트)"
+      },
+      "ticket": false,
+      "tierTag": {
+        "tierTags": [
+          {
+            "tier": "1",
+            "tags": []
+          },
+          {
+            "tier": "2",
+            "tags": [
+              "PACKAGE_GIFT"
+            ]
+          }
+        ]
+      },
+      "tags": [
+        "PACKAGE"
+      ],
+      "stamp": "ON_SALE",
+      "valex": false,
+      "fomoBadge": {},
+      "displayDeliveryFee": {
+        "type": "FREE",
+        "free": true
+      },
+      "displayCategoryViews": [
+        {
+          "displaySpace": "BASIC",
+          "ldisplayCategoryId": 95,
+          "mdisplayCategoryId": 178,
+          "representative": true
+        }
+      ]
+    },
+    {
+      "id": 12588197,
+      "productId": 12588197,
+      "name": "\"단독 굿즈 구성\" [BEST] 포켓 미니 판고데기 가나디에디션",
+      "productType": "Shipping",
+      "price": {
+        "basicPrice": 36000,
+        "sellingPrice": 30900,
+        "discountRate": 14
+      },
+      "brand": {
+        "id": 4479,
+        "name": "보다나"
+      },
+      "review": {
+        "positiveReviewRate": 0,
+        "reviewCount": 0
+      },
+      "wish": {
+        "wishCount": 22969,
+        "isWished": false
+      },
+      "image": {
+        "imageUrl": "https://st.kakaocdn.net/product/gift/product/20260601090206_1910574a6eb0436a96517c6c0886fb7b.png",
+        "imageBlindType": "NONE"
+      },
+      "displayName": {
+        "EVENT_SUG_NAME_MODEL": "\"단독 굿즈 구성\" [BEST] 포켓 미니 판고데기 가나디에디션"
+      },
+      "ticket": false,
+      "tierTag": {
+        "tierTags": [
+          {
+            "tier": "1",
+            "tags": []
+          },
+          {
+            "tier": "2",
+            "tags": []
+          }
+        ]
+      },
+      "tags": [],
+      "stamp": "ON_SALE",
+      "valex": false,
+      "fomoBadge": {},
+      "displayDeliveryFee": {
+        "type": "FREE",
+        "free": true
+      },
+      "displayCategoryViews": [
+        {
+          "displaySpace": "BASIC",
+          "ldisplayCategoryId": 97,
+          "mdisplayCategoryId": 161,
+          "representative": true
+        }
+      ]
+    },
+    {
+      "id": 4478284,
+      "productId": 4478284,
+      "name": "새콤달콤 쫀득한 프리미엄 고당도 애플망고 총 3.2kg 이상 (6~8입/로얄과)",
+      "productType": "Shipping",
+      "price": {
+        "basicPrice": 49900,
+        "sellingPrice": 49900,
+        "discountRate": 0
+      },
+      "brand": {
+        "id": 1003,
+        "name": "수플린 "
+      },
+      "review": {
+        "positiveReviewRate": 0,
+        "reviewCount": 0
+      },
+      "wish": {
+        "wishCount": 8228,
+        "isWished": false
+      },
+      "image": {
+        "imageUrl": "https://st.kakaocdn.net/product/gift/product/20260713110847_3df295c0a46d4fc89c149965d0f2bdf0.jpg",
+        "imageBlindType": "NONE"
+      },
+      "displayName": {
+        "EVENT_SUG_NAME_MODEL": "새콤달콤 쫀득한 프리미엄 고당도 애플망고 총 3.2kg 이상 (6~8입/로얄과)"
+      },
+      "ticket": false,
+      "tierTag": {
+        "tierTags": [
+          {
+            "tier": "1",
+            "tags": []
+          },
+          {
+            "tier": "2",
+            "tags": []
+          }
+        ]
+      },
+      "tags": [],
+      "stamp": "ON_SALE",
+      "valex": false,
+      "fomoBadge": {},
+      "displayDeliveryFee": {
+        "type": "FREE",
+        "free": true
+      },
+      "displayCategoryViews": [
+        {
+          "displaySpace": "BASIC",
+          "ldisplayCategoryId": 93,
+          "mdisplayCategoryId": 203,
+          "representative": true
+        }
+      ]
+    },
+    {
+      "id": 7591649,
+      "productId": 7591649,
+      "name": "NEW베이비 코숏 [선물포장/BEST] 클리오 프로아이팔레트에어 +[증정] 섀도우 브러쉬",
+      "productType": "Shipping",
+      "price": {
+        "basicPrice": 34000,
+        "sellingPrice": 23200,
+        "discountRate": 31
+      },
+      "brand": {
+        "id": 3726,
+        "name": "클리오"
+      },
+      "review": {
+        "positiveReviewRate": 0,
+        "reviewCount": 0
+      },
+      "wish": {
+        "wishCount": 31757,
+        "isWished": false
+      },
+      "image": {
+        "imageUrl": "https://st.kakaocdn.net/product/gift/product/20260702145816_9d10aa8fe16c4db7a91c3753a9eca6d6.jpg",
+        "imageBlindType": "NONE"
+      },
+      "displayName": {
+        "EVENT_SUG_NAME_MODEL": "NEW베이비 코숏 [선물포장/BEST] 클리오 프로아이팔레트에어 +[증정] 섀도우 브러쉬"
+      },
+      "ticket": false,
+      "tierTag": {
+        "tierTags": [
+          {
+            "tier": "1",
+            "tags": []
+          },
+          {
+            "tier": "2",
+            "tags": []
+          }
+        ]
+      },
+      "tags": [],
+      "stamp": "ON_SALE",
+      "valex": false,
+      "specialGift": {
+        "item": "선물하기 증정 혜택"
+      },
+      "fomoBadge": {},
+      "displayDeliveryFee": {
+        "type": "FREE",
+        "free": true
+      },
+      "displayCategoryViews": [
+        {
+          "displaySpace": "BASIC",
+          "ldisplayCategoryId": 95,
+          "mdisplayCategoryId": 181,
+          "representative": true
+        }
+      ]
+    },
+    {
+      "id": 2089506,
+      "productId": 2089506,
+      "name": "[선물포장] 핸드크림 50mL (7종 택1)",
+      "productType": "Shipping",
+      "price": {
+        "basicPrice": 26000,
+        "sellingPrice": 26000,
+        "discountRate": 0
+      },
+      "brand": {
+        "id": 10545,
+        "name": "논픽션"
+      },
+      "review": {
+        "positiveReviewRate": 0,
+        "reviewCount": 0
+      },
+      "wish": {
+        "wishCount": 119970,
+        "isWished": false
+      },
+      "image": {
+        "imageUrl": "https://st.kakaocdn.net/product/gift/product/20260612175713_68051ab6437148dbad62282420260855.jpg",
+        "imageBlindType": "NONE"
+      },
+      "displayName": {
+        "EVENT_SUG_NAME_MODEL": "[선물포장] 핸드크림 50mL (7종 택1)"
+      },
+      "ticket": false,
+      "tierTag": {
+        "tierTags": [
+          {
+            "tier": "1",
+            "tags": []
+          },
+          {
+            "tier": "2",
+            "tags": [
+              "PACKAGE_GIFT"
+            ]
+          }
+        ]
+      },
+      "tags": [
+        "PACKAGE"
+      ],
+      "stamp": "ON_SALE",
+      "valex": false,
+      "specialGift": {
+        "item": "엽서카드 증정"
+      },
+      "fomoBadge": {},
+      "displayDeliveryFee": {
+        "type": "FREE",
+        "free": true
+      },
+      "displayCategoryViews": [
+        {
+          "displaySpace": "BASIC",
+          "ldisplayCategoryId": 95,
+          "mdisplayCategoryId": 178,
+          "representative": true
+        }
+      ]
+    },
+    {
+      "id": 11970230,
+      "productId": 11970230,
+      "name": "\"가벼운 식단관리\" [단독/선물포장] 꾸덕한 무가당 그릭요거트 & 저당 콩포트 기프트박스 (그릭요거트+콩포트 각 5입)",
+      "productType": "Shipping",
+      "price": {
+        "basicPrice": 27900,
+        "sellingPrice": 27900,
+        "discountRate": 0
+      },
+      "brand": {
+        "id": 18814,
+        "name": "그리카야"
+      },
+      "review": {
+        "positiveReviewRate": 0,
+        "reviewCount": 0
+      },
+      "wish": {
+        "wishCount": 11859,
+        "isWished": false
+      },
+      "image": {
+        "imageUrl": "https://st.kakaocdn.net/product/gift/product/20260617135546_b5bf2e806690427898bd44901aa5372a.jpg",
+        "imageBlindType": "NONE"
+      },
+      "displayName": {
+        "EVENT_SUG_NAME_MODEL": "\"가벼운 식단관리\" [단독/선물포장] 꾸덕한 무가당 그릭요거트 & 저당 콩포트 기프트박스 (그릭요거트+콩포트 각 5입)"
+      },
+      "ticket": false,
+      "tierTag": {
+        "tierTags": [
+          {
+            "tier": "1",
+            "tags": []
+          },
+          {
+            "tier": "2",
+            "tags": [
+              "PACKAGE_GIFT"
+            ]
+          }
+        ]
+      },
+      "labels": [
+        {
+          "type": "EXCLUSIVE",
+          "name": "단독"
+        }
+      ],
+      "tags": [
+        "PACKAGE"
+      ],
+      "stamp": "ON_SALE",
+      "valex": false,
+      "fomoBadge": {},
+      "displayDeliveryFee": {
+        "type": "FREE",
+        "free": true
+      },
+      "displayCategoryViews": [
+        {
+          "displaySpace": "BASIC",
+          "ldisplayCategoryId": 93,
+          "mdisplayCategoryId": 101,
+          "representative": true
+        }
+      ]
+    },
+    {
+      "id": 12724545,
+      "productId": 12724545,
+      "name": "\"26년형 신제품/건강 명절선물\" 펄스밴드 손목저주파 마사지기 EMS 보호대 안마기 휴대용근육 골프 임산부육아출산 부모님직장인",
+      "productType": "Shipping",
+      "price": {
+        "basicPrice": 23900,
+        "sellingPrice": 23900,
+        "discountRate": 0
+      },
+      "brand": {
+        "id": 18508,
+        "name": "베오라"
+      },
+      "review": {
+        "positiveReviewRate": 0,
+        "reviewCount": 0
+      },
+      "wish": {
+        "wishCount": 7434,
+        "isWished": false
+      },
+      "image": {
+        "imageUrl": "https://st.kakaocdn.net/product/gift/product/20260109160730_22b1a2188b024ec08cdf5c6a0b663b46.jpg",
+        "imageBlindType": "NONE"
+      },
+      "displayName": {
+        "EVENT_SUG_NAME_MODEL": "\"26년형 신제품/건강 명절선물\" 펄스밴드 손목저주파 마사지기 EMS 보호대 안마기 휴대용근육 골프 임산부육아출산 부모님직장인"
+      },
+      "ticket": false,
+      "tierTag": {
+        "tierTags": [
+          {
+            "tier": "1",
+            "tags": []
+          },
+          {
+            "tier": "2",
+            "tags": []
+          }
+        ]
+      },
+      "tags": [],
+      "stamp": "ON_SALE",
+      "valex": false,
+      "fomoBadge": {},
+      "displayDeliveryFee": {
+        "type": "FREE",
+        "free": true
+      },
+      "displayCategoryViews": [
+        {
+          "displaySpace": "BASIC",
+          "ldisplayCategoryId": 97,
+          "mdisplayCategoryId": 164,
+          "representative": true
+        }
+      ]
+    },
+    {
+      "id": 9703988,
+      "productId": 9703988,
+      "name": "BEST [선물포장] 힌스 로 글로우 젤 틴트",
+      "productType": "Shipping",
+      "price": {
+        "basicPrice": 17000,
+        "sellingPrice": 12900,
+        "discountRate": 24
+      },
+      "brand": {
+        "id": 10863,
+        "name": "힌스"
+      },
+      "review": {
+        "positiveReviewRate": 0,
+        "reviewCount": 0
+      },
+      "wish": {
+        "wishCount": 40911,
+        "isWished": false
+      },
+      "image": {
+        "imageUrl": "https://st.kakaocdn.net/product/gift/product/20260406154222_a51e49ee7268434589e73f55cadb36fd.jpg",
+        "imageBlindType": "NONE"
+      },
+      "displayName": {
+        "EVENT_SUG_NAME_MODEL": "BEST [선물포장] 힌스 로 글로우 젤 틴트"
+      },
+      "ticket": false,
+      "tierTag": {
+        "tierTags": [
+          {
+            "tier": "1",
+            "tags": []
+          },
+          {
+            "tier": "2",
+            "tags": [
+              "PACKAGE_GIFT"
+            ]
+          }
+        ]
+      },
+      "tags": [
+        "PACKAGE"
+      ],
+      "stamp": "ON_SALE",
+      "valex": false,
+      "fomoBadge": {},
+      "displayDeliveryFee": {
+        "type": "FREE",
+        "free": true
+      },
+      "displayCategoryViews": [
+        {
+          "displaySpace": "BASIC",
+          "ldisplayCategoryId": 95,
+          "mdisplayCategoryId": 181,
+          "representative": true
+        }
+      ]
+    },
+    {
+      "id": 11801920,
+      "productId": 11801920,
+      "name": "[스탠리공식유통사] 퀜처 프로투어 플립 스트로 텀블러 591ml",
+      "productType": "Shipping",
+      "price": {
+        "basicPrice": 48000,
+        "sellingPrice": 48000,
+        "discountRate": 0
+      },
+      "brand": {
+        "id": 10941,
+        "name": "스탠리"
+      },
+      "review": {
+        "positiveReviewRate": 0,
+        "reviewCount": 0
+      },
+      "wish": {
+        "wishCount": 13557,
+        "isWished": false
+      },
+      "image": {
+        "imageUrl": "https://st.kakaocdn.net/product/gift/product/20260622154742_6485121200ae4ac3b03ef4e029f76b92.png",
+        "imageBlindType": "NONE"
+      },
+      "displayName": {
+        "EVENT_SUG_NAME_MODEL": "[스탠리공식유통사] 퀜처 프로투어 플립 스트로 텀블러 591ml"
+      },
+      "ticket": false,
+      "tierTag": {
+        "tierTags": [
+          {
+            "tier": "1",
+            "tags": []
+          },
+          {
+            "tier": "2",
+            "tags": [
+              "PACKAGE_GIFT"
+            ]
+          }
+        ]
+      },
+      "tags": [
+        "PACKAGE"
+      ],
+      "stamp": "ON_SALE",
+      "valex": false,
+      "fomoBadge": {},
+      "displayDeliveryFee": {
+        "type": "FREE",
+        "free": true
+      },
+      "displayCategoryViews": [
+        {
+          "displaySpace": "BASIC",
+          "ldisplayCategoryId": 94,
+          "mdisplayCategoryId": 110,
+          "representative": true
+        }
+      ]
+    },
+    {
+      "id": 2295596,
+      "productId": 2295596,
+      "name": "[경복궁] 한우곰탕 보양세트 (한우사골고기곰탕2팩+사골고기도가니탕2팩+한우사골곰탕2팩)",
+      "productType": "Shipping",
+      "price": {
+        "basicPrice": 59000,
+        "sellingPrice": 43000,
+        "discountRate": 27
+      },
+      "brand": {
+        "id": 11529,
+        "name": "경복궁"
+      },
+      "review": {
+        "positiveReviewRate": 0,
+        "reviewCount": 0
+      },
+      "wish": {
+        "wishCount": 2434,
+        "isWished": false
+      },
+      "image": {
+        "imageUrl": "https://st.kakaocdn.net/product/gift/product/20251106102449_c8d2eb17d819416c90e740886c1d3486.jpg",
+        "imageBlindType": "NONE"
+      },
+      "displayName": {
+        "EVENT_SUG_NAME_MODEL": "[경복궁] 한우곰탕 보양세트 (한우사골고기곰탕2팩+사골고기도가니탕2팩+한우사골곰탕2팩)"
+      },
+      "ticket": false,
+      "tierTag": {
+        "tierTags": [
+          {
+            "tier": "1",
+            "tags": []
+          },
+          {
+            "tier": "2",
+            "tags": []
+          }
+        ]
+      },
+      "tags": [],
+      "stamp": "ON_SALE",
+      "valex": false,
+      "fomoBadge": {},
+      "displayDeliveryFee": {
+        "type": "FREE",
+        "free": true
+      },
+      "displayCategoryViews": [
+        {
+          "displaySpace": "BASIC",
+          "ldisplayCategoryId": 93,
+          "mdisplayCategoryId": 102,
+          "representative": true
+        }
+      ]
+    },
+    {
+      "id": 12821204,
+      "productId": 12821204,
+      "name": "가나디 1인 면기 세트 (세라믹면기+스푼레스트+우드젓가락)",
+      "productType": "Shipping",
+      "price": {
+        "basicPrice": 21800,
+        "sellingPrice": 21800,
+        "discountRate": 0
+      },
+      "brand": {
+        "id": 5396,
+        "name": "캐릭터주방"
+      },
+      "review": {
+        "positiveReviewRate": 0,
+        "reviewCount": 0
+      },
+      "wish": {
+        "wishCount": 19084,
+        "isWished": false
+      },
+      "image": {
+        "imageUrl": "https://st.kakaocdn.net/product/gift/product/20260119150722_6b3fdfd60e044cecabd0674f93288a88.jpg",
+        "imageBlindType": "NONE"
+      },
+      "displayName": {
+        "EVENT_SUG_NAME_MODEL": "가나디 1인 면기 세트 (세라믹면기+스푼레스트+우드젓가락)"
+      },
+      "ticket": false,
+      "tierTag": {
+        "tierTags": [
+          {
+            "tier": "1",
+            "tags": []
+          },
+          {
+            "tier": "2",
+            "tags": []
+          }
+        ]
+      },
+      "tags": [],
+      "stamp": "ON_SALE",
+      "valex": false,
+      "fomoBadge": {},
+      "displayDeliveryFee": {
+        "type": "FREE",
+        "free": true
+      },
+      "displayCategoryViews": [
+        {
+          "displaySpace": "BASIC",
+          "ldisplayCategoryId": 94,
+          "mdisplayCategoryId": 110,
+          "representative": true
+        }
+      ]
+    },
+    {
+      "id": 10576607,
+      "productId": 10576607,
+      "name": "[카카오 단독] 프래그런스 앤솔러지 볼륨 I (향수 디스커버리 세트)",
+      "productType": "Shipping",
+      "price": {
+        "basicPrice": 49000,
+        "sellingPrice": 49000,
+        "discountRate": 0
+      },
+      "brand": {
+        "id": 9887,
+        "name": "이솝"
+      },
+      "review": {
+        "positiveReviewRate": 0,
+        "reviewCount": 0
+      },
+      "wish": {
+        "wishCount": 18192,
+        "isWished": false
+      },
+      "image": {
+        "imageUrl": "https://st.kakaocdn.net/product/gift/product/20260720104343_3a14e734f9754f3a8f9c3e96f7c59f1c.jpg",
+        "imageBlindType": "NONE"
+      },
+      "displayName": {
+        "EVENT_SUG_NAME_MODEL": "[카카오 단독] 프래그런스 앤솔러지 볼륨 I (향수 디스커버리 세트)"
+      },
+      "ticket": false,
+      "tierTag": {
+        "tierTags": [
+          {
+            "tier": "1",
+            "tags": []
+          },
+          {
+            "tier": "2",
+            "tags": []
+          }
+        ]
+      },
+      "labels": [
+        {
+          "type": "EXCLUSIVE",
+          "name": "단독"
+        }
+      ],
+      "tags": [],
+      "stamp": "ON_SALE",
+      "valex": false,
+      "fomoBadge": {},
+      "displayDeliveryFee": {
+        "type": "FREE",
+        "free": true
+      },
+      "displayCategoryViews": [
+        {
+          "displaySpace": "BASIC",
+          "ldisplayCategoryId": 95,
+          "mdisplayCategoryId": 177,
+          "representative": true
+        },
+        {
+          "displaySpace": "LUX",
+          "ldisplayCategoryId": 244,
+          "mdisplayCategoryId": 248,
+          "representative": false
+        }
+      ]
+    },
+    {
+      "id": 11896032,
+      "productId": 11896032,
+      "name": "말띠 오가닉 선물 [임신/출산축하] \"유기농 오가닉 7종 맞춤선물세트 (선물포장-기프트박스 + 쇼핑백)",
+      "productType": "Shipping",
+      "price": {
+        "basicPrice": 38900,
+        "sellingPrice": 38900,
+        "discountRate": 0
+      },
+      "brand": {
+        "id": 10448,
+        "name": "이키"
+      },
+      "review": {
+        "positiveReviewRate": 0,
+        "reviewCount": 0
+      },
+      "wish": {
+        "wishCount": 8744,
+        "isWished": false
+      },
+      "image": {
+        "imageUrl": "https://st.kakaocdn.net/product/gift/product/20260602141321_4c07608d836c4a8b84504fd7663ce22a.jpg",
+        "imageBlindType": "NONE"
+      },
+      "displayName": {
+        "EVENT_SUG_NAME_MODEL": "말띠 오가닉 선물 [임신/출산축하] \"유기농 오가닉 7종 맞춤선물세트 (선물포장-기프트박스 + 쇼핑백)"
+      },
+      "ticket": false,
+      "tierTag": {
+        "tierTags": [
+          {
+            "tier": "1",
+            "tags": []
+          },
+          {
+            "tier": "2",
+            "tags": [
+              "PACKAGE_GIFT"
+            ]
+          }
+        ]
+      },
+      "labels": [
+        {
+          "type": "EXCLUSIVE",
+          "name": "단독"
+        }
+      ],
+      "tags": [
+        "PACKAGE"
+      ],
+      "stamp": "ON_SALE",
+      "valex": false,
+      "fomoBadge": {},
+      "displayDeliveryFee": {
+        "type": "FREE",
+        "free": true
+      },
+      "displayCategoryViews": [
+        {
+          "displaySpace": "BASIC",
+          "ldisplayCategoryId": 98,
+          "mdisplayCategoryId": 144,
+          "representative": true
+        }
+      ]
+    },
+    {
+      "id": 9636373,
+      "productId": 9636373,
+      "name": "프리미엄 기프트 루톤 마난티오 릴렉싱 이탈리아 비건 바디 클렌저 + 바디로션 + 핸드타월 증정 패키지 SET",
+      "productType": "Shipping",
+      "price": {
+        "basicPrice": 54000,
+        "sellingPrice": 54000,
+        "discountRate": 0
+      },
+      "brand": {
+        "id": 14941,
+        "name": "루톤"
+      },
+      "review": {
+        "positiveReviewRate": 0,
+        "reviewCount": 0
+      },
+      "wish": {
+        "wishCount": 16350,
+        "isWished": false
+      },
+      "image": {
+        "imageUrl": "https://st.kakaocdn.net/product/gift/product/20260714213602_06eede1dada64eaabf4fffd9ca83166e.jpg",
+        "imageBlindType": "NONE"
+      },
+      "displayName": {
+        "EVENT_SUG_NAME_MODEL": "프리미엄 기프트 루톤 마난티오 릴렉싱 이탈리아 비건 바디 클렌저 + 바디로션 + 핸드타월 증정 패키지 SET"
+      },
+      "ticket": false,
+      "tierTag": {
+        "tierTags": [
+          {
+            "tier": "1",
+            "tags": []
+          },
+          {
+            "tier": "2",
+            "tags": [
+              "PACKAGE_GIFT"
+            ]
+          }
+        ]
+      },
+      "labels": [
+        {
+          "type": "EXCLUSIVE",
+          "name": "단독"
+        }
+      ],
+      "tags": [
+        "PACKAGE"
+      ],
+      "stamp": "ON_SALE",
+      "valex": false,
+      "specialGift": {
+        "item": "루톤 바디미스트 105ml 본품"
+      },
+      "fomoBadge": {},
+      "displayDeliveryFee": {
+        "type": "FREE",
+        "free": true
+      },
+      "displayCategoryViews": [
+        {
+          "displaySpace": "BASIC",
+          "ldisplayCategoryId": 98,
+          "mdisplayCategoryId": 144,
+          "representative": true
+        },
+        {
+          "displaySpace": "LUX",
+          "ldisplayCategoryId": 251,
+          "mdisplayCategoryId": 254,
+          "representative": false
+        }
+      ]
+    },
+    {
+      "id": 10816177,
+      "productId": 10816177,
+      "name": "임신출산선물 [디자인선택] 아뜰리에 슈 블랭킷 33종 택 1",
+      "productType": "Shipping",
+      "price": {
+        "basicPrice": 127000,
+        "sellingPrice": 127000,
+        "discountRate": 0
+      },
+      "brand": {
+        "id": 17966,
+        "name": "아뜰리에슈"
+      },
+      "review": {
+        "positiveReviewRate": 0,
+        "reviewCount": 0
+      },
+      "wish": {
+        "wishCount": 6985,
+        "isWished": false
+      },
+      "image": {
+        "imageUrl": "https://st.kakaocdn.net/product/gift/product/20250731115317_a1daecc47ff64d58a5d23682e5a82f08.jpg",
+        "imageBlindType": "NONE"
+      },
+      "displayName": {
+        "EVENT_SUG_NAME_MODEL": "임신출산선물 [디자인선택] 아뜰리에 슈 블랭킷 33종 택 1"
+      },
+      "ticket": false,
+      "tierTag": {
+        "tierTags": [
+          {
+            "tier": "1",
+            "tags": []
+          },
+          {
+            "tier": "2",
+            "tags": []
+          }
+        ]
+      },
+      "tags": [],
+      "stamp": "ON_SALE",
+      "valex": false,
+      "fomoBadge": {},
+      "displayDeliveryFee": {
+        "type": "FREE",
+        "free": true
+      },
+      "displayCategoryViews": [
+        {
+          "displaySpace": "BASIC",
+          "ldisplayCategoryId": 98,
+          "mdisplayCategoryId": 144,
+          "representative": true
+        }
+      ]
+    }
+  ]
+}

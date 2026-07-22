@@ -1,0 +1,907 @@
+{
+  "ads": [
+    {
+      "products": [
+        {
+          "product": {
+            "id": 9646819,
+            "productId": 9646819,
+            "name": "웰릿 미니언즈 [단독]웰릿 이뮨베라 1박스 x 미니언즈 밥앤팀 인형+아크릴 듀얼 키링(택1/인형 포장) + 10종 스티커 1개 증정 선물세트",
+            "productType": "Shipping",
+            "price": {
+              "basicPrice": 29900,
+              "sellingPrice": 29900,
+              "discountRate": 0
+            },
+            "brand": {
+              "id": 17091,
+              "name": "웰릿"
+            },
+            "wish": {
+              "wishCount": 7408,
+              "isWished": false
+            },
+            "image": {
+              "imageUrl": "https://st.kakaocdn.net/product/gift/product/20260622141623_f3d1fbb48fc34b059552012689a2545e.jpg",
+              "imageBlindType": "NONE"
+            },
+            "displayName": {
+              "EVENT_SUG_NAME_MODEL": "웰릿 미니언즈 [단독]웰릿 이뮨베라 1박스 x 미니언즈 밥앤팀 인형+아크릴 듀얼 키링(택1/인형 포장) + 10종 스티커 1개 증정 선물세트"
+            },
+            "ticket": false,
+            "tags": [],
+            "stamp": "ON_SALE",
+            "valex": false,
+            "specialGift": {
+              "item": "미니언즈 인형+아크릴 듀얼 키링/택1"
+            },
+            "displayDeliveryFee": {
+              "type": "FREE",
+              "free": true
+            },
+            "displayCategoryViews": [
+              {
+                "displaySpace": "BASIC",
+                "ldisplayCategoryId": 93,
+                "mdisplayCategoryId": 204,
+                "representative": true
+              }
+            ]
+          },
+          "adBadge": "AD",
+          "adContentId": 65873
+        },
+        {
+          "product": {
+            "id": 13657047,
+            "productId": 13657047,
+            "name": "[센트룸] 이뮨 부스트 데일리 프로텍션C 14포 2개입",
+            "productType": "Shipping",
+            "price": {
+              "basicPrice": 29800,
+              "sellingPrice": 29800,
+              "discountRate": 0
+            },
+            "brand": {
+              "id": 6927,
+              "name": "센트룸"
+            },
+            "wish": {
+              "wishCount": 21,
+              "isWished": false
+            },
+            "image": {
+              "imageUrl": "https://st.kakaocdn.net/product/gift/product/20260527164057_76b763c140fc4a648b8c4c3718cf8c59.jpg",
+              "imageBlindType": "NONE"
+            },
+            "displayName": {
+              "EVENT_SUG_NAME_MODEL": "[센트룸] 이뮨 부스트 데일리 프로텍션C 14포 2개입"
+            },
+            "ticket": false,
+            "tags": [
+              "PACKAGE"
+            ],
+            "stamp": "ON_SALE",
+            "valex": false,
+            "displayDeliveryFee": {
+              "type": "FREE",
+              "free": true
+            },
+            "displayCategoryViews": [
+              {
+                "displaySpace": "BASIC",
+                "ldisplayCategoryId": 93,
+                "mdisplayCategoryId": 204,
+                "representative": true
+              }
+            ]
+          },
+          "adBadge": "AD",
+          "adContentId": 65825
+        },
+        {
+          "product": {
+            "id": 2119902,
+            "productId": 2119902,
+            "name": "샤넬BEST 립스틱 루쥬 코코 플래쉬",
+            "productType": "Shipping",
+            "price": {
+              "basicPrice": 60000,
+              "sellingPrice": 60000,
+              "discountRate": 0
+            },
+            "brand": {
+              "id": 10813,
+              "name": "샤넬"
+            },
+            "wish": {
+              "wishCount": 63322,
+              "isWished": false
+            },
+            "image": {
+              "imageUrl": "https://st.kakaocdn.net/product/gift/product/20260429105944_14b5778f091a40b0b547c2ce56f05f5d.jpg",
+              "imageBlindType": "NONE"
+            },
+            "displayName": {
+              "EVENT_SUG_NAME_MODEL": "샤넬BEST 립스틱 루쥬 코코 플래쉬"
+            },
+            "ticket": false,
+            "tags": [
+              "PACKAGE"
+            ],
+            "stamp": "ON_SALE",
+            "valex": false,
+            "displayDeliveryFee": {
+              "type": "FREE",
+              "free": true
+            },
+            "displayCategoryViews": [
+              {
+                "displaySpace": "LUX",
+                "ldisplayCategoryId": 243,
+                "mdisplayCategoryId": 247,
+                "representative": true
+              }
+            ]
+          },
+          "adBadge": "AD",
+          "adContentId": 65272
+        },
+        {
+          "product": {
+            "id": 2191632,
+            "productId": 2191632,
+            "name": "건강/부모님/생일 \"대한민국1등콜라겐\" 에버콜라겐 타임 50포 (1박스)",
+            "productType": "Shipping",
+            "price": {
+              "basicPrice": 44900,
+              "sellingPrice": 44900,
+              "discountRate": 0
+            },
+            "brand": {
+              "id": 9104,
+              "name": "에버콜라겐"
+            },
+            "wish": {
+              "wishCount": 1636,
+              "isWished": false
+            },
+            "image": {
+              "imageUrl": "https://st.kakaocdn.net/product/gift/product/20260720092929_ac1c11b802964c8392bb6ba81db53660.png",
+              "imageBlindType": "NONE"
+            },
+            "displayName": {
+              "EVENT_SUG_NAME_MODEL": "건강/부모님/생일 \"대한민국1등콜라겐\" 에버콜라겐 타임 50포 (1박스)"
+            },
+            "ticket": false,
+            "tags": [],
+            "stamp": "ON_SALE",
+            "valex": false,
+            "displayDeliveryFee": {
+              "type": "FREE",
+              "free": true
+            },
+            "displayCategoryViews": [
+              {
+                "displaySpace": "BASIC",
+                "ldisplayCategoryId": 93,
+                "mdisplayCategoryId": 205,
+                "representative": true
+              }
+            ]
+          },
+          "adBadge": "AD",
+          "adContentId": 65581
+        },
+        {
+          "product": {
+            "id": 13869668,
+            "productId": 13869668,
+            "name": "관절엔 콘드로이친 1200 선물세트 (2개월분/선물포장))",
+            "productType": "Shipping",
+            "price": {
+              "basicPrice": 128000,
+              "sellingPrice": 128000,
+              "discountRate": 0
+            },
+            "brand": {
+              "id": 19814,
+              "name": "주영엔에스"
+            },
+            "wish": {
+              "wishCount": 11,
+              "isWished": false
+            },
+            "image": {
+              "imageUrl": "https://st.kakaocdn.net/product/gift/product/20260716091340_d46b74e7c75e48328ff22a2c2221f92a.png",
+              "imageBlindType": "NONE"
+            },
+            "displayName": {
+              "EVENT_SUG_NAME_MODEL": "관절엔 콘드로이친 1200 선물세트 (2개월분/선물포장))"
+            },
+            "ticket": false,
+            "tags": [],
+            "stamp": "ON_SALE",
+            "valex": false,
+            "displayDeliveryFee": {
+              "type": "FREE",
+              "free": true
+            },
+            "displayCategoryViews": [
+              {
+                "displaySpace": "BASIC",
+                "ldisplayCategoryId": 93,
+                "mdisplayCategoryId": 204,
+                "representative": true
+              }
+            ]
+          },
+          "adBadge": "AD",
+          "adContentId": 65943
+        },
+        {
+          "product": {
+            "id": 12896656,
+            "productId": 12896656,
+            "name": "석고방향제 증정 [카카오 단독] 미니 룸 스프레이 50ml",
+            "productType": "Shipping",
+            "price": {
+              "basicPrice": 46000,
+              "sellingPrice": 41400,
+              "discountRate": 10
+            },
+            "brand": {
+              "id": 5892,
+              "name": "조말론런던"
+            },
+            "wish": {
+              "wishCount": 28247,
+              "isWished": false
+            },
+            "image": {
+              "imageUrl": "https://st.kakaocdn.net/product/gift/product/20260703114758_6e3361d0a1c64f91978f72ff39b791ec.jpg",
+              "imageBlindType": "NONE"
+            },
+            "displayName": {
+              "EVENT_SUG_NAME_MODEL": "석고방향제 증정 [카카오 단독] 미니 룸 스프레이 50ml"
+            },
+            "ticket": false,
+            "tags": [
+              "PACKAGE"
+            ],
+            "stamp": "ON_SALE",
+            "valex": false,
+            "specialGift": {
+              "item": "석고방향제 증정"
+            },
+            "displayDeliveryFee": {
+              "type": "FREE",
+              "free": true
+            },
+            "displayCategoryViews": [
+              {
+                "displaySpace": "BASIC",
+                "ldisplayCategoryId": 95,
+                "mdisplayCategoryId": 177,
+                "representative": true
+              },
+              {
+                "displaySpace": "LUX",
+                "ldisplayCategoryId": 244,
+                "mdisplayCategoryId": 248,
+                "representative": false
+              }
+            ]
+          },
+          "adBadge": "AD",
+          "adContentId": 65852
+        }
+      ],
+      "type": "CMAAS",
+      "position": 2,
+      "pcPosition": 1,
+      "placement": "DELIVERY_POSITION_1"
+    },
+    {
+      "products": [
+        {
+          "product": {
+            "id": 12913405,
+            "productId": 12913405,
+            "name": "다이슨 에어랩 코안다2x 멀티 스타일러 앤 드라이어 2중 택1",
+            "productType": "Shipping",
+            "price": {
+              "basicPrice": 879000,
+              "sellingPrice": 791100,
+              "discountRate": 10
+            },
+            "brand": {
+              "id": 11766,
+              "name": "다이슨(일반)"
+            },
+            "wish": {
+              "wishCount": 2053,
+              "isWished": false
+            },
+            "image": {
+              "imageUrl": "https://st.kakaocdn.net/product/gift/product/SFSDxyVdWVoJ4lb06M2p-Q/5noS9yTeahzJoJVNgHlLQ1hLNcUx-nZx3cJnS13AS8o.jpg",
+              "imageBlindType": "NONE"
+            },
+            "displayName": {
+              "EVENT_SUG_NAME_MODEL": "다이슨 에어랩 코안다2x 멀티 스타일러 앤 드라이어 2중 택1"
+            },
+            "ticket": false,
+            "tags": [],
+            "stamp": "ON_SALE",
+            "valex": false,
+            "displayDeliveryFee": {
+              "type": "FREE",
+              "free": true
+            },
+            "displayCategoryViews": [
+              {
+                "displaySpace": "BASIC",
+                "ldisplayCategoryId": 97,
+                "mdisplayCategoryId": 161,
+                "representative": true
+              },
+              {
+                "displaySpace": "LUX",
+                "ldisplayCategoryId": 256,
+                "mdisplayCategoryId": 267,
+                "representative": false
+              }
+            ]
+          },
+          "adBadge": "AD",
+          "adContentId": 66153
+        },
+        {
+          "product": {
+            "id": 12211836,
+            "productId": 12211836,
+            "name": "결혼/이사/답례품 (5P) 호텔수건 선물세트 프리미엄 코튼 고중량 40수 코마사 타월 타올 인테리어 집들이 신혼",
+            "productType": "Shipping",
+            "price": {
+              "basicPrice": 66000,
+              "sellingPrice": 33000,
+              "discountRate": 50
+            },
+            "brand": {
+              "id": 19019,
+              "name": "호텔이슬라"
+            },
+            "wish": {
+              "wishCount": 10277,
+              "isWished": false
+            },
+            "image": {
+              "imageUrl": "https://st.kakaocdn.net/product/gift/product/20260423090853_4d0a5ff868ed4df296bd6c39bc4300fc.jpg",
+              "imageBlindType": "NONE"
+            },
+            "displayName": {
+              "EVENT_SUG_NAME_MODEL": "결혼/이사/답례품 (5P) 호텔수건 선물세트 프리미엄 코튼 고중량 40수 코마사 타월 타올 인테리어 집들이 신혼"
+            },
+            "ticket": false,
+            "tags": [
+              "PACKAGE"
+            ],
+            "stamp": "ON_SALE",
+            "valex": false,
+            "displayDeliveryFee": {
+              "type": "FREE",
+              "free": true
+            },
+            "displayCategoryViews": [
+              {
+                "displaySpace": "BASIC",
+                "ldisplayCategoryId": 94,
+                "mdisplayCategoryId": 116,
+                "representative": true
+              }
+            ]
+          },
+          "adBadge": "AD",
+          "adContentId": 65539
+        },
+        {
+          "product": {
+            "id": 11985052,
+            "productId": 11985052,
+            "name": "여름휴가/바캉스 BEST 데일리 메이크업 세트 (글로시 틴트 + 블러쉬 + 미니쿠션)",
+            "productType": "Shipping",
+            "price": {
+              "basicPrice": 28000,
+              "sellingPrice": 25200,
+              "discountRate": 10
+            },
+            "brand": {
+              "id": 15707,
+              "name": "무지개맨션"
+            },
+            "wish": {
+              "wishCount": 19529,
+              "isWished": false
+            },
+            "image": {
+              "imageUrl": "https://st.kakaocdn.net/product/gift/product/20260708155215_3d06880b2d75494f972b54828b69be8d.jpg",
+              "imageBlindType": "NONE"
+            },
+            "displayName": {
+              "EVENT_SUG_NAME_MODEL": "여름휴가/바캉스 BEST 데일리 메이크업 세트 (글로시 틴트 + 블러쉬 + 미니쿠션)"
+            },
+            "ticket": false,
+            "tags": [
+              "PACKAGE"
+            ],
+            "stamp": "ON_SALE",
+            "valex": false,
+            "displayDeliveryFee": {
+              "type": "FREE",
+              "free": true
+            },
+            "displayCategoryViews": [
+              {
+                "displaySpace": "BASIC",
+                "ldisplayCategoryId": 95,
+                "mdisplayCategoryId": 181,
+                "representative": true
+              }
+            ]
+          },
+          "adBadge": "AD",
+          "adContentId": 65994
+        },
+        {
+          "product": {
+            "id": 7705759,
+            "productId": 7705759,
+            "name": "더블 증정 \"NEW 피치선셋 출시\" [생일/선물포장] 퍼퓸 헤어미스트 (7가지 향) (퍼퓸솝 + 키링 증정)",
+            "productType": "Shipping",
+            "price": {
+              "basicPrice": 15000,
+              "sellingPrice": 13800,
+              "discountRate": 8
+            },
+            "brand": {
+              "id": 9857,
+              "name": "딥퍼랑스"
+            },
+            "wish": {
+              "wishCount": 39406,
+              "isWished": false
+            },
+            "image": {
+              "imageUrl": "https://st.kakaocdn.net/product/gift/product/20260716151522_02aac77298fc494d98d8e65b784fe5bf.jpg",
+              "imageBlindType": "NONE"
+            },
+            "displayName": {
+              "EVENT_SUG_NAME_MODEL": "더블 증정 \"NEW 피치선셋 출시\" [생일/선물포장] 퍼퓸 헤어미스트 (7가지 향) (퍼퓸솝 + 키링 증정)"
+            },
+            "ticket": false,
+            "tags": [
+              "PACKAGE"
+            ],
+            "stamp": "ON_SALE",
+            "valex": false,
+            "specialGift": {
+              "item": "퍼퓸솝 + 여행용 키링 증정 mist"
+            },
+            "displayDeliveryFee": {
+              "type": "FREE",
+              "free": true
+            },
+            "displayCategoryViews": [
+              {
+                "displaySpace": "BASIC",
+                "ldisplayCategoryId": 95,
+                "mdisplayCategoryId": 184,
+                "representative": true
+              }
+            ]
+          },
+          "adBadge": "AD",
+          "adContentId": 66189
+        },
+        {
+          "product": {
+            "id": 13620750,
+            "productId": 13620750,
+            "name": "찬물에 간편하게! [잔망루피 파우치 증정] 쌍계X잔망루피 애사비 데일리 트리플팩 30스틱X3박스 (사과/레몬/파인애플)",
+            "productType": "Shipping",
+            "price": {
+              "basicPrice": 63000,
+              "sellingPrice": 31900,
+              "discountRate": 49
+            },
+            "brand": {
+              "id": 1744,
+              "name": "쌍계명차"
+            },
+            "wish": {
+              "wishCount": 5781,
+              "isWished": false
+            },
+            "image": {
+              "imageUrl": "https://st.kakaocdn.net/product/gift/product/20260713152311_42a14d2bfc20484788adda5dc1d9282f.png",
+              "imageBlindType": "NONE"
+            },
+            "displayName": {
+              "EVENT_SUG_NAME_MODEL": "찬물에 간편하게! [잔망루피 파우치 증정] 쌍계X잔망루피 애사비 데일리 트리플팩 30스틱X3박스 (사과/레몬/파인애플)"
+            },
+            "ticket": false,
+            "tags": [],
+            "stamp": "ON_SALE",
+            "valex": false,
+            "specialGift": {
+              "item": "잔망루피 파우치 증정!"
+            },
+            "displayDeliveryFee": {
+              "type": "FREE",
+              "free": true
+            },
+            "displayCategoryViews": [
+              {
+                "displaySpace": "BASIC",
+                "ldisplayCategoryId": 93,
+                "mdisplayCategoryId": 188,
+                "representative": true
+              }
+            ]
+          },
+          "adBadge": "AD",
+          "adContentId": 65429
+        },
+        {
+          "product": {
+            "id": 13486904,
+            "productId": 13486904,
+            "name": "[선물포장] 노크 바디워시&바디토너 SET",
+            "productType": "Shipping",
+            "price": {
+              "basicPrice": 68000,
+              "sellingPrice": 47600,
+              "discountRate": 30
+            },
+            "brand": {
+              "id": 19186,
+              "name": "노크"
+            },
+            "wish": {
+              "wishCount": 8732,
+              "isWished": false
+            },
+            "image": {
+              "imageUrl": "https://st.kakaocdn.net/product/gift/product/20260719160906_901e4350a4224260a5e5035682649dbd.jpg",
+              "imageBlindType": "NONE"
+            },
+            "displayName": {
+              "EVENT_SUG_NAME_MODEL": "[선물포장] 노크 바디워시&바디토너 SET"
+            },
+            "ticket": false,
+            "tags": [],
+            "stamp": "ON_SALE",
+            "valex": false,
+            "displayDeliveryFee": {
+              "type": "FREE",
+              "free": true
+            },
+            "displayCategoryViews": [
+              {
+                "displaySpace": "BASIC",
+                "ldisplayCategoryId": 95,
+                "mdisplayCategoryId": 178,
+                "representative": true
+              }
+            ]
+          },
+          "adBadge": "AD",
+          "adContentId": 65804
+        }
+      ],
+      "type": "CMAAS",
+      "position": 6,
+      "pcPosition": 9,
+      "placement": "DELIVERY_POSITION_6"
+    },
+    {
+      "products": [
+        {
+          "product": {
+            "id": 13885919,
+            "productId": 13885919,
+            "name": "한정수량 선런칭! 2026 조앤프렌즈 블루투스 마이크",
+            "productType": "Shipping",
+            "price": {
+              "basicPrice": 52800,
+              "sellingPrice": 52800,
+              "discountRate": 0
+            },
+            "brand": {
+              "id": 5508,
+              "name": "로이체"
+            },
+            "wish": {
+              "wishCount": 376,
+              "isWished": false
+            },
+            "image": {
+              "imageUrl": "https://st.kakaocdn.net/product/gift/product/20260710143112_df138c464b694b7781592b3a6bf8822d.jpg",
+              "imageBlindType": "NONE"
+            },
+            "displayName": {
+              "EVENT_SUG_NAME_MODEL": "한정수량 선런칭! 2026 조앤프렌즈 블루투스 마이크"
+            },
+            "ticket": false,
+            "tags": [],
+            "stamp": "ON_SALE",
+            "valex": false,
+            "displayDeliveryFee": {
+              "type": "FREE",
+              "free": true
+            },
+            "displayCategoryViews": [
+              {
+                "displaySpace": "BASIC",
+                "ldisplayCategoryId": 97,
+                "mdisplayCategoryId": 158,
+                "representative": true
+              }
+            ]
+          },
+          "adBadge": "",
+          "adContentId": 66416
+        },
+        {
+          "product": {
+            "id": 13672105,
+            "productId": 13672105,
+            "name": "[경량 양우산 6종 택1] 춘식이 우산 양산 접이식 자외선차단 친구 직장동료 생일 시원한 가벼운 여름 장마 선물",
+            "productType": "Shipping",
+            "price": {
+              "basicPrice": 22900,
+              "sellingPrice": 17900,
+              "discountRate": 21
+            },
+            "brand": {
+              "id": 10546,
+              "name": "프렌즈리빙LC"
+            },
+            "wish": {
+              "wishCount": 6324,
+              "isWished": false
+            },
+            "image": {
+              "imageUrl": "https://st.kakaocdn.net/product/gift/product/20260602145008_57ed36bd85144e4b95fd83efeb5a819b.jpg",
+              "imageBlindType": "NONE"
+            },
+            "displayName": {
+              "EVENT_SUG_NAME_MODEL": "[경량 양우산 6종 택1] 춘식이 우산 양산 접이식 자외선차단 친구 직장동료 생일 시원한 가벼운 여름 장마 선물"
+            },
+            "ticket": false,
+            "tags": [],
+            "stamp": "ON_SALE",
+            "valex": false,
+            "displayDeliveryFee": {
+              "type": "FREE",
+              "free": true
+            },
+            "displayCategoryViews": [
+              {
+                "displaySpace": "BASIC",
+                "ldisplayCategoryId": 96,
+                "mdisplayCategoryId": 431,
+                "representative": true
+              }
+            ]
+          },
+          "adBadge": "",
+          "adContentId": 66050
+        },
+        {
+          "product": {
+            "id": 13829139,
+            "productId": 13829139,
+            "name": "무료각인 [단독] 커스텀 천연가죽 골프 네임택 캐디백 골프백 보스턴백 이름표 가방",
+            "productType": "Shipping",
+            "price": {
+              "basicPrice": 27800,
+              "sellingPrice": 27800,
+              "discountRate": 0
+            },
+            "brand": {
+              "id": 16648,
+              "name": "엑세스스튜디오(스포츠)"
+            },
+            "wish": {
+              "wishCount": 71,
+              "isWished": false
+            },
+            "image": {
+              "imageUrl": "https://st.kakaocdn.net/product/gift/product/20260630010950_e8a515a6f41d42ac8d9549840a031f0f.jpg",
+              "imageBlindType": "NONE"
+            },
+            "displayName": {
+              "EVENT_SUG_NAME_MODEL": "무료각인 [단독] 커스텀 천연가죽 골프 네임택 캐디백 골프백 보스턴백 이름표 가방"
+            },
+            "ticket": false,
+            "tags": [
+              "PACKAGE",
+              "CUSTOM_SERVICE"
+            ],
+            "stamp": "ON_SALE",
+            "valex": false,
+            "specialGift": {
+              "item": "커스텀참 증정"
+            },
+            "displayDeliveryFee": {
+              "type": "FREE",
+              "free": true
+            },
+            "displayCategoryViews": [
+              {
+                "displaySpace": "BASIC",
+                "ldisplayCategoryId": 99,
+                "mdisplayCategoryId": 123,
+                "representative": true
+              }
+            ]
+          },
+          "adBadge": "",
+          "adContentId": 65866
+        },
+        {
+          "product": {
+            "id": 13898888,
+            "productId": 13898888,
+            "name": "[공식입점] [AW26 신상] 보보쇼즈 팝 티셔츠 B226AC142",
+            "productType": "Shipping",
+            "price": {
+              "basicPrice": 78000,
+              "sellingPrice": 78000,
+              "discountRate": 0
+            },
+            "brand": {
+              "id": 19117,
+              "name": "보보쇼즈"
+            },
+            "wish": {
+              "wishCount": 0,
+              "isWished": false
+            },
+            "image": {
+              "imageUrl": "https://st.kakaocdn.net/product/gift/product/0SKjmGGjFYRpxv5izZWkQQ/Jahz4F4P4udxp73PdX-lDr1sSJb1w2YuksI6siI0Vm0.jpg",
+              "imageBlindType": "NONE"
+            },
+            "displayName": {
+              "EVENT_SUG_NAME_MODEL": "[공식입점] [AW26 신상] 보보쇼즈 팝 티셔츠 B226AC142"
+            },
+            "ticket": false,
+            "tags": [],
+            "stamp": "ON_SALE",
+            "valex": false,
+            "displayDeliveryFee": {
+              "type": "FREE",
+              "free": true
+            },
+            "displayCategoryViews": [
+              {
+                "displaySpace": "BASIC",
+                "ldisplayCategoryId": 98,
+                "mdisplayCategoryId": 138,
+                "representative": true
+              },
+              {
+                "displaySpace": "LUX",
+                "ldisplayCategoryId": 251,
+                "mdisplayCategoryId": 253,
+                "representative": false
+              }
+            ]
+          },
+          "adBadge": "",
+          "adContentId": 66325
+        },
+        {
+          "product": {
+            "id": 13619808,
+            "productId": 13619808,
+            "name": "본사공식 아디다스 두산베어스 저지 2종 KM6599/KM6600",
+            "productType": "Shipping",
+            "price": {
+              "basicPrice": 119000,
+              "sellingPrice": 119000,
+              "discountRate": 0
+            },
+            "brand": {
+              "id": 14486,
+              "name": "아디다스코리아"
+            },
+            "wish": {
+              "wishCount": 166,
+              "isWished": false
+            },
+            "image": {
+              "imageUrl": "https://st.kakaocdn.net/product/gift/product/20260519155405_6bae021897c148c0913f25d240f0b0b0.jpg",
+              "imageBlindType": "NONE"
+            },
+            "displayName": {
+              "EVENT_SUG_NAME_MODEL": "본사공식 아디다스 두산베어스 저지 2종 KM6599/KM6600"
+            },
+            "ticket": false,
+            "tags": [],
+            "stamp": "ON_SALE",
+            "valex": false,
+            "displayDeliveryFee": {
+              "type": "FREE",
+              "free": true
+            },
+            "displayCategoryViews": [
+              {
+                "displaySpace": "BASIC",
+                "ldisplayCategoryId": 99,
+                "mdisplayCategoryId": 118,
+                "representative": true
+              }
+            ]
+          },
+          "adBadge": "",
+          "adContentId": 62907
+        },
+        {
+          "product": {
+            "id": 9644037,
+            "productId": 9644037,
+            "name": "울강쥐 시원하개! 3color 강아지 쿨매트 방석 쿠션",
+            "productType": "Shipping",
+            "price": {
+              "basicPrice": 29900,
+              "sellingPrice": 29900,
+              "discountRate": 0
+            },
+            "brand": {
+              "id": 16301,
+              "name": "레토(반려동물)"
+            },
+            "wish": {
+              "wishCount": 468,
+              "isWished": false
+            },
+            "image": {
+              "imageUrl": "https://st.kakaocdn.net/product/gift/product/20260428174946_7d0e9ada5cfa4c0d997451a6968be247.jpg",
+              "imageBlindType": "NONE"
+            },
+            "displayName": {
+              "EVENT_SUG_NAME_MODEL": "울강쥐 시원하개! 3color 강아지 쿨매트 방석 쿠션"
+            },
+            "ticket": false,
+            "tags": [],
+            "stamp": "ON_SALE",
+            "valex": false,
+            "specialGift": {
+              "item": "리뷰인증시 아아증정!"
+            },
+            "displayDeliveryFee": {
+              "type": "FREE",
+              "free": true
+            },
+            "displayCategoryViews": [
+              {
+                "displaySpace": "BASIC",
+                "ldisplayCategoryId": 98,
+                "mdisplayCategoryId": 313,
+                "representative": true
+              }
+            ]
+          },
+          "adBadge": "",
+          "adContentId": 65468
+        }
+      ],
+      "type": "CMAAS",
+      "position": 21,
+      "pcPosition": 21,
+      "placement": "DELIVERY_MD_POSITION"
+    }
+  ]
+}
