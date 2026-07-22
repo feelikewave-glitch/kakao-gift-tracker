@@ -155,20 +155,22 @@ def save_rows(con, category, rows, stamp):
 
 
 def click_subtab(page, subtab):
+    """가운뎃점(·/・/ㆍ) 문자 차이에 흔들리지 않게, 단어 사이를 '아무 글자 1개'로 매칭"""
     if not subtab or subtab == "전체":
-        return
-    for sel in (subtab, subtab.replace("·", "")):
-        try:
-            el = page.get_by_text(sel, exact=False).first
-            el.click(timeout=4000)
-            page.wait_for_timeout(2500)
-            return
-        except Exception:
-            continue
+        return False
+    parts = [p for p in re.split(r"[^\w가-힣]+", subtab) if p]
+    pattern = re.compile(".?".join(map(re.escape, parts)))
+    try:
+        page.get_by_text(pattern).first.click(timeout=6000)
+        page.wait_for_timeout(3000)
+        return True
+    except Exception:
+        return False
 
 
 def collect_category(page, cat, debug=False):
     captured = []
+    phase = {"v": 0}   # 0 = 하위탭 클릭 이전, 1 = 클릭 이후(해당 탭 데이터)
 
     def on_response(resp):
         try:
@@ -177,7 +179,7 @@ def collect_category(page, cat, debug=False):
             data = resp.json()
         except Exception:
             return
-        captured.append((resp.url, data))
+        captured.append((resp.url, data, phase["v"]))
         if debug:
             fn = re.sub(r"[^a-zA-Z0-9]+", "_", resp.url)[-70:]
             try:
@@ -189,12 +191,22 @@ def collect_category(page, cat, debug=False):
     page.on("response", on_response)
     page.goto(cat["url"], wait_until="domcontentloaded", timeout=60000)
     page.wait_for_timeout(3000)
-    click_subtab(page, cat.get("subtab"))
+
+    sub = cat.get("subtab")
+    needs_click = bool(sub) and sub != "전체"
+    if needs_click:
+        phase["v"] = 1          # 지금부터 오는 응답 = 선택한 하위탭 데이터
+        click_subtab(page, sub)
+
     for _ in range(SCROLL_ROUNDS):
         page.mouse.wheel(0, 24000)
         page.wait_for_timeout(SCROLL_WAIT)
     page.remove_listener("response", on_response)
-    return build_rows(captured)
+
+    # 하위탭 카테고리는 클릭 이후(phase 1) 응답만 사용해 '전체' 데이터 오염 방지
+    min_phase = 1 if needs_click else 0
+    use = [(u, d) for (u, d, ph) in captured if ph >= min_phase]
+    return build_rows(use)
 
 
 def main():
