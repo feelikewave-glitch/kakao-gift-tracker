@@ -20,8 +20,8 @@ from playwright.sync_api import sync_playwright
 #   subtab : 카테고리 안의 하위 탭 텍스트. "전체"면 기본, 다른 값이면 그 탭을 클릭.
 # ---------------------------------------------------------------------------
 CATEGORIES = [
-    {"name": "건강_전체",        "url": "https://gift.kakao.com/ranking/category/8", "subtab": "전체"},
-    {"name": "이너뷰티_다이어트", "url": "https://gift.kakao.com/ranking/category/8", "subtab": "다이어트·이너뷰티"},
+    {"name": "건강_전체",        "slug": "health",     "url": "https://gift.kakao.com/ranking/category/8", "subtab": "전체"},
+    {"name": "이너뷰티_다이어트", "slug": "innerbeauty", "url": "https://gift.kakao.com/ranking/category/8", "subtab": "다이어트·이너뷰티"},
 ]
 
 TOP_N         = 500
@@ -154,6 +154,28 @@ def save_rows(con, category, rows, stamp):
             w.writerow([stamp, r["rank"], r["brand"], r["name"], r["wish"], r["price"]])
 
 
+def update_history(slug, rows, stamp, keep_top=120, keep_snaps=400):
+    """대시보드용 시간대별 히스토리 JSON 누적 (data/history_<slug>.json)"""
+    path = os.path.join(DATA_DIR, f"history_{slug}.json")
+    hist = []
+    if os.path.exists(path):
+        try:
+            hist = json.load(open(path, encoding="utf-8"))
+        except Exception:
+            hist = []
+    snap = {"t": stamp, "items": [
+        {"r": r["rank"], "b": r["brand"], "n": r["name"], "w": r["wish"]}
+        for r in rows[:keep_top]
+    ]}
+    if hist and hist[-1].get("t") == stamp:   # 같은 시각 재실행이면 교체
+        hist[-1] = snap
+    else:
+        hist.append(snap)
+    hist = hist[-keep_snaps:]                  # 오래된 스냅샷 정리(약 14일)
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(hist, f, ensure_ascii=False, separators=(",", ":"))
+
+
 def click_subtab(page, subtab):
     """가운뎃점(·/・/ㆍ) 문자 차이에 흔들리지 않게, 단어 사이를 '아무 글자 1개'로 매칭"""
     if not subtab or subtab == "전체":
@@ -269,6 +291,7 @@ def main():
                 rows = collect_category(page, cat, debug=debug)
                 if rows:
                     save_rows(con, cat["name"], rows, stamp)
+                    update_history(cat["slug"], rows, stamp)
                     print(f"[{stamp}] {cat['name']}: {len(rows)}개 저장")
                 else:
                     print(f"[{stamp}] {cat['name']}: 상품목록 못 찾음")
