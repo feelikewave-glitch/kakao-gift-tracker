@@ -203,10 +203,50 @@ def collect_category(page, cat, debug=False):
         page.wait_for_timeout(SCROLL_WAIT)
     page.remove_listener("response", on_response)
 
+    if debug:
+        _dump_probe(page, cat, captured)
+
     # 하위탭 카테고리는 클릭 이후(phase 1) 응답만 사용해 '전체' 데이터 오염 방지
     min_phase = 1 if needs_click else 0
     use = [(u, d) for (u, d, ph) in captured if ph >= min_phase]
     return build_rows(use)
+
+
+def _dump_probe(page, cat, captured):
+    """디버그: 잡은 요청 주소 목록 + 하위탭 버튼 구조 + 현재 화면 상품명을 저장"""
+    # 1) 모든 요청 주소(전체 URL, phase 태그 포함)
+    try:
+        lines = [f"[phase{ph}] {u}" for (u, d, ph) in captured]
+        with open(os.path.join(DEBUG_DIR, f"_manifest_{cat['name']}.txt"), "w", encoding="utf-8") as f:
+            f.write("\n".join(lines))
+    except Exception:
+        pass
+    # 2) 하위탭 버튼 구조 + 현재 상품명
+    try:
+        info = page.evaluate("""() => {
+            const labels = ['전체','홍삼','건강식품','영양제','다이어트','이너뷰티','즙','환'];
+            const subtabs = [];
+            const seen = new Set();
+            for (const e of Array.from(document.querySelectorAll('a,button,span,li,div'))) {
+                const t = (e.textContent||'').trim();
+                if (t && t.length <= 14 && labels.some(l => t.includes(l))) {
+                    const key = t + '|' + e.tagName;
+                    if (seen.has(key)) continue; seen.add(key);
+                    subtabs.push({text:t, tag:e.tagName, cls:(e.className||'').toString().slice(0,120),
+                                  href:e.getAttribute('href')||'', html:e.outerHTML.slice(0,400)});
+                }
+            }
+            const prods = [];
+            for (const im of Array.from(document.querySelectorAll('img')).slice(0,60)) {
+                const a = im.getAttribute('alt')||''; if (a && a.length>6) prods.push(a);
+            }
+            return {subtabs, firstProducts: prods.slice(0,12)};
+        }""")
+        with open(os.path.join(DEBUG_DIR, f"_subtabs_{cat['name']}.json"), "w", encoding="utf-8") as f:
+            json.dump(info, f, ensure_ascii=False, indent=2)
+    except Exception as e:
+        with open(os.path.join(DEBUG_DIR, f"_subtabs_{cat['name']}.json"), "w", encoding="utf-8") as f:
+            json.dump({"error": str(e)}, f, ensure_ascii=False)
 
 
 def main():
