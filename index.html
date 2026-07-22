@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>카카오 선물하기 랭킹 트래커</title>
+<link rel="stylesheet" as="style" crossorigin
+  href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+  :root{
+    --surface-1:#fcfcfb; --page:#f9f9f7;
+    --ink:#0b0b0b; --ink2:#52514e; --muted:#898781;
+    --grid:#e1e0d9; --axis:#c3c2b7; --border:rgba(11,11,11,0.10);
+    --series-1:#2a78d6; --up:#d03b3b; --down:#2a78d6; --good:#0ca30c;
+    --brandhi:#fff4e8; --brandbd:#eb6834;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--page);color:var(--ink);
+    font-family:"Pretendard Variable",Pretendard,system-ui,-apple-system,"Malgun Gothic",sans-serif;
+    -webkit-font-smoothing:antialiased;}
+  .wrap{max-width:1080px;margin:0 auto;padding:24px 20px 60px;}
+  header h1{font-size:20px;margin:0 0 4px;font-weight:700;}
+  header .sub{color:var(--ink2);font-size:13px;}
+  .updated{color:var(--muted);font-size:12px;margin-top:4px;}
+  .tabs{display:flex;gap:8px;margin:20px 0 4px;}
+  .tab{padding:9px 16px;border:1px solid var(--border);background:var(--surface-1);
+    border-radius:10px;font-size:14px;font-weight:600;color:var(--ink2);cursor:pointer;}
+  .tab.active{background:var(--ink);color:#fff;border-color:var(--ink);}
+  .controls{display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+    background:var(--surface-1);border:1px solid var(--border);border-radius:12px;
+    padding:14px 16px;margin:14px 0 18px;}
+  .controls label{font-size:13px;color:var(--ink2);font-weight:600;}
+  .controls input[type=range]{flex:1;min-width:200px;accent-color:var(--series-1);}
+  .controls input:disabled{opacity:.4;}
+  .timepill{font-weight:700;font-size:15px;font-variant-numeric:tabular-nums;
+    background:var(--page);border:1px solid var(--border);border-radius:8px;padding:5px 12px;}
+  table{width:100%;border-collapse:collapse;background:var(--surface-1);
+    border:1px solid var(--border);border-radius:12px;overflow:hidden;font-size:14px;}
+  th,td{padding:11px 12px;text-align:left;border-bottom:1px solid var(--grid);}
+  th{font-size:12px;color:var(--muted);font-weight:700;background:#fbfbf9;}
+  td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;}
+  tr:last-child td{border-bottom:none;}
+  tr.brandrow{background:var(--brandhi);}
+  tr.brandrow td:first-child{box-shadow:inset 3px 0 var(--brandbd);}
+  .rank{font-weight:800;font-variant-numeric:tabular-nums;font-size:15px;}
+  .delta{font-size:12px;font-weight:700;font-variant-numeric:tabular-nums;}
+  .up{color:var(--up);} .down{color:var(--down);} .flat{color:var(--muted);} .new{color:var(--good);font-weight:800;}
+  .brand{color:var(--ink2);font-size:12px;}
+  .pname{font-weight:600;line-height:1.35;}
+  .wish{font-weight:700;}
+  tr.clickable{cursor:pointer;}
+  tr.clickable:hover{background:#f3f6fb;}
+  tr.brandrow.clickable:hover{background:#ffedd9;}
+  .panel{margin-top:22px;background:var(--surface-1);border:1px solid var(--border);
+    border-radius:12px;padding:18px 18px 10px;}
+  .panel h3{margin:0 0 2px;font-size:15px;font-weight:700;}
+  .panel .psub{color:var(--ink2);font-size:12px;margin-bottom:10px;}
+  .legend{font-size:12px;color:var(--ink2);display:flex;gap:16px;margin-bottom:4px;}
+  .legend span{display:inline-flex;align-items:center;gap:6px;}
+  .swatch{width:20px;height:3px;border-radius:2px;display:inline-block;}
+  .empty{padding:40px;text-align:center;color:var(--muted);font-size:14px;line-height:1.7;}
+  footer{margin-top:28px;color:var(--muted);font-size:12px;line-height:1.6;}
+  .search{margin:0 0 10px;}
+  .search input{width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:10px;
+    font-size:14px;font-family:inherit;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>🎁 카카오 선물하기 랭킹 트래커</h1>
+    <div class="sub">건강 전체 · 이너뷰티/다이어트 · 매시간 자동 수집</div>
+    <div class="updated" id="updated"></div>
+  </header>
+
+  <div class="tabs" id="tabs">
+    <div class="tab active" data-cat="health">건강 전체</div>
+    <div class="tab" data-cat="innerbeauty">이너뷰티 / 다이어트</div>
+  </div>
+
+  <div class="controls">
+    <label>시간대</label>
+    <input type="range" id="hour" min="0" max="0" value="0" step="1">
+    <span class="timepill" id="hourlabel">—</span>
+  </div>
+
+  <div class="search"><input id="q" placeholder="상품명·브랜드 검색 (예: 타이거모닝)"></div>
+
+  <div id="tablewrap"></div>
+
+  <div class="panel">
+    <h3 id="trendTitle">상품을 클릭하면 순위 추이가 보여요</h3>
+    <div class="psub" id="trendSub">시간대별 순위 변화 (숫자가 낮을수록 상위)</div>
+    <div class="legend">
+      <span><i class="swatch" style="background:var(--series-1)"></i>순위</span>
+      <span><i class="swatch" style="background:var(--brandbd)"></i>위시 수</span>
+    </div>
+    <div id="chart"></div>
+  </div>
+
+  <footer id="foot">데이터 수집 주기: 매시간 · 개인 참고용</footer>
+</div>
+
+<script>
+const CATS = {
+  health:      {file:"data/history_health.json",     label:"건강 전체"},
+  innerbeauty: {file:"data/history_innerbeauty.json", label:"이너뷰티/다이어트"},
+};
+const HILITE = "타이거모닝";  // 강조할 브랜드(부분일치)
+const store = {};
+let curCat = "health", curIdx = 0, curTrendName = null, query = "";
+
+const fmt = n => (n==null? "–" : Number(n).toLocaleString());
+
+async function load(cat){
+  if (store[cat]) return store[cat];
+  try{
+    const res = await fetch(CATS[cat].file + "?_=" + Date.now());
+    if(!res.ok) throw 0;
+    const data = await res.json();
+    store[cat] = Array.isArray(data)? data : [];
+  }catch(e){ store[cat] = []; }
+  return store[cat];
+}
+
+function snapMap(snap){
+  const m = new Map();
+  (snap.items||[]).forEach(it => m.set(it.n, it));
+  return m;
+}
+
+function renderTable(){
+  const hist = store[curCat] || [];
+  const wrap = document.getElementById('tablewrap');
+  if(!hist.length){
+    wrap.innerHTML = `<div class="empty">아직 수집된 데이터가 없어요.<br>
+      매시간 자동 수집이 돌면 여기에 순위가 채워집니다.<br>
+      (첫 수집 직후라면 몇 분 뒤 새로고침 해보세요)</div>`;
+    return;
+  }
+  const snap = hist[curIdx];
+  const prev = curIdx>0 ? snapMap(hist[curIdx-1]) : null;
+  let items = (snap.items||[]).slice().sort((a,b)=>a.r-b.r);
+  if(query){
+    const q = query.toLowerCase();
+    items = items.filter(it => (it.n||"").toLowerCase().includes(q) || (it.b||"").toLowerCase().includes(q));
+  }
+  const rows = items.map(it=>{
+    const hi = (it.b||"").includes(HILITE);
+    let rd = '<span class="delta flat">–</span>', wd = '<span class="delta flat">–</span>';
+    if(prev){
+      const p = prev.get(it.n);
+      if(!p){ rd = '<span class="delta new">NEW</span>'; }
+      else{
+        const d = p.r - it.r;
+        rd = d>0? `<span class="delta up">▲${d}</span>` : d<0? `<span class="delta down">▼${-d}</span>` : '<span class="delta flat">–</span>';
+        const wdv = (it.w!=null && p.w!=null)? it.w - p.w : 0;
+        wd = wdv>0? `<span class="delta up">+${fmt(wdv)}</span>` : wdv<0? `<span class="delta down">${fmt(wdv)}</span>` : '<span class="delta flat">–</span>';
+      }
+    }
+    return `<tr class="clickable ${hi?'brandrow':''}" data-name="${encodeURIComponent(it.n)}">
+      <td><span class="rank">${it.r}</span></td>
+      <td>${rd}</td>
+      <td><div class="pname">${it.n}</div><div class="brand">${it.b||""}</div></td>
+      <td class="num wish">${fmt(it.w)}</td>
+      <td class="num">${wd}</td></tr>`;
+  }).join("");
+  wrap.innerHTML = `<table><thead><tr>
+      <th style="width:60px">순위</th><th style="width:66px">변동</th>
+      <th>브랜드 · 상품명</th><th class="num" style="width:104px">위시 수</th>
+      <th class="num" style="width:96px">위시 변동</th></tr></thead><tbody>${rows}</tbody></table>`;
+  wrap.querySelectorAll('tr').forEach(tr=>{
+    tr.onclick=()=>{ curTrendName = decodeURIComponent(tr.dataset.name); renderChart(); };
+  });
+}
+
+function renderChart(){
+  const hist = store[curCat] || [];
+  const chart = document.getElementById('chart');
+  if(!curTrendName || hist.length===0){ chart.innerHTML=""; return; }
+  const pts = [];
+  hist.forEach((snap,i)=>{
+    const it = (snap.items||[]).find(x=>x.n===curTrendName);
+    if(it) pts.push({i, t:snap.t, r:it.r, w:it.w, b:it.b});
+  });
+  if(!pts.length){ chart.innerHTML=""; return; }
+  document.getElementById('trendTitle').textContent = (pts[0].b? pts[0].b+" · " : "") + curTrendName;
+  if(pts.length===1){
+    document.getElementById('trendSub').textContent =
+      `현재 ${pts[0].r}위 · 위시 ${fmt(pts[0].w)} — 추이 그래프는 데이터가 2시간 이상 쌓이면 그려져요`;
+    chart.innerHTML=""; return;
+  }
+  document.getElementById('trendSub').textContent = "시간대별 순위 변화 (숫자가 낮을수록 상위)";
+  const W=1000,H=240,padL=44,padR=20,padT=16,padB=30;
+  const ranks=pts.map(p=>p.r), lo=Math.max(1,Math.min(...ranks)-1), hi=Math.max(...ranks)+1;
+  const n=pts.length;
+  const x=i=> padL + (W-padL-padR)*(n===1?0.5:i/(n-1));
+  const y=r=> padT + (H-padT-padB)*((r-lo)/(hi-lo||1));
+  let grid="";
+  for(let g=0;g<=4;g++){ const rr=Math.round(lo+(hi-lo)*g/4), yy=y(rr);
+    grid+=`<line x1="${padL}" y1="${yy}" x2="${W-padR}" y2="${yy}" stroke="var(--grid)"/>
+      <text x="${padL-8}" y="${yy+4}" text-anchor="end" font-size="11" fill="var(--muted)">${rr}위</text>`; }
+  let xl="";
+  const step=Math.max(1,Math.floor(n/6));
+  pts.forEach((p,i)=>{ if(i%step===0||i===n-1){ const lab=(p.t||"").slice(5,16);
+    xl+=`<text x="${x(i)}" y="${H-8}" text-anchor="middle" font-size="10" fill="var(--muted)">${lab}</text>`; }});
+  const line=pts.map((p,i)=>`${x(i)},${y(p.r)}`).join(" ");
+  const dots=pts.map((p,i)=>`<circle cx="${x(i)}" cy="${y(p.r)}" r="${i===curIdx?5:3}"
+     fill="${i===curIdx?'var(--series-1)':'#fff'}" stroke="var(--series-1)" stroke-width="2"/>`).join("");
+  chart.innerHTML=`<svg viewBox="0 0 ${W} ${H}" width="100%" preserveAspectRatio="xMidYMid meet">
+    ${grid}${xl}<polyline points="${line}" fill="none" stroke="var(--series-1)"
+    stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>${dots}</svg>`;
+}
+
+function setupSlider(){
+  const hist = store[curCat] || [];
+  const el = document.getElementById('hour');
+  el.max = Math.max(0, hist.length-1);
+  el.value = hist.length? hist.length-1 : 0;
+  el.disabled = hist.length<=1;
+  curIdx = hist.length? hist.length-1 : 0;
+  updateHourLabel();
+}
+function updateHourLabel(){
+  const hist = store[curCat] || [];
+  const lab = document.getElementById('hourlabel');
+  lab.textContent = hist.length? (hist[curIdx].t||"—") : "—";
+  const up = document.getElementById('updated');
+  up.textContent = hist.length? `최종 업데이트: ${hist[hist.length-1].t}   ·   수집 시점 ${hist.length}개` : "";
+}
+
+async function switchCat(cat){
+  curCat = cat; query=""; document.getElementById('q').value="";
+  await load(cat);
+  curTrendName=null;
+  document.getElementById('chart').innerHTML="";
+  document.getElementById('trendTitle').textContent="상품을 클릭하면 순위 추이가 보여요";
+  setupSlider(); renderTable();
+}
+
+document.getElementById('tabs').onclick=e=>{
+  if(!e.target.dataset.cat) return;
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  e.target.classList.add('active');
+  switchCat(e.target.dataset.cat);
+};
+document.getElementById('hour').oninput=function(){
+  curIdx=+this.value; updateHourLabel(); renderTable(); renderChart();
+};
+document.getElementById('q').oninput=function(){ query=this.value.trim(); renderTable(); };
+
+switchCat('health');
+</script>
+</body>
+</html>
